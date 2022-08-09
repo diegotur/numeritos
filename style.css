@@ -1,0 +1,34 @@
+#pad{
+    margin: 10%;
+}
+/* #btn1{
+    border-radius: 100%;
+    width: 3.2vw;
+    height: 3.2vw; 
+} */
+.padBtn{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    border-width: 1vh;
+    border: red solid;
+    height: 20vw;
+    width: 30vh;
+    position: absolute;
+    /* margin-top: -22.5vw;
+    margin-left: 13.3vh; */
+}
+#verIntento{
+    border-width: 1vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    border: red solid;
+    height: 5vw;
+    width: 30vh;
+    position: relative;
+    margin-left: 50%;
+   /*  margin-top: -17.5vw;
+    margin-left: 63.3vh; */
+
+
+}
