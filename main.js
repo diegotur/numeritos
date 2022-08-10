@@ -12,77 +12,34 @@ guessNumber = arrGuessNumber.join("");
 
 //console.log(guessNumber);
 
-boton = document.getElementById ("btn0");
+let boton = document.getElementsByClassName ("botonClick");
 
 let verIntento = document.getElementById ("verIntento");
 
 let intentos = [];
 
 
-
-boton.addEventListener("click", puto);
-
-function puto (){
-    
-    let verga = document.getElementById (putin);
-    let vergaza = verga.innerHTML;
-    console.log(vergaza);
-  
-}
-/* function NumeroClick (){
-    let x = boton[]
-
-    intentos.push(document.getElementsByTagName(boton5)); */
-
-        
+document.getElementById("btn0").addEventListener("click", ()=> {myFunction("0")});
+document.getElementById("btn1").addEventListener("click", ()=> {myFunction("1")});
+document.getElementById("btn2").addEventListener("click", ()=> {myFunction("2")});
+document.getElementById("btn3").addEventListener("click", ()=> {myFunction("3")});
+document.getElementById("btn4").addEventListener("click", ()=> {myFunction("4")});
+document.getElementById("btn5").addEventListener("click", ()=> {myFunction("5")});
+document.getElementById("btn6").addEventListener("click", ()=> {myFunction("6")});
+document.getElementById("btn7").addEventListener("click", ()=> {myFunction("7")});
+document.getElementById("btn8").addEventListener("click", ()=> {myFunction("8")});
+document.getElementById("btn9").addEventListener("click", ()=> {myFunction("9")});
 
 
-
-/* }  */
-/* boton1.addEventListener("click", NumeroClick);
-
-function NumeroClick (){
-    intentos.push(1);
-}
-boton2.addEventListener("click", NumeroClick);
-
-function NumeroClick (){
-    intentos.push(2);
-}
-boton3.addEventListener("click", NumeroClick);
-
-function NumeroClick (){
-    intentos.push(3);
-}
-boton4.addEventListener("click", NumeroClick);
-
-function NumeroClick (){
-    intentos.push(4);
-}
-boton5.addEventListener("click", NumeroClick);
-
-function NumeroClick (){
-    intentos.push(5);
-}
-boton6.addEventListener("click", NumeroClick);
-
-function NumeroClick (){
-    intentos.push(6);
-}
-boton7.addEventListener("click", NumeroClick);
-
-function NumeroClick (){
-    intentos.push(7);
-}
-boton8.addEventListener("click", NumeroClick);
-
-function NumeroClick (){
-    intentos.push(8);
-}
-boton9.addEventListener("click", NumeroClick);
-
-function NumeroClick (){
-    intentos.push(9);
-}
- */
-
+function myFunction(a) {
+    if (intentos.length <4){
+        const node = document.createElement("div");
+        const textnode = document.createTextNode(a);
+        node.classList.add('styleDiv');
+        node.appendChild(textnode);
+        console.log (node, textnode);
+        verIntento.appendChild(node);
+        intentos.push(a);
+        console.log(intentos);
+    }
+    }
