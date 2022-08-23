@@ -5,12 +5,18 @@ let gN = numero.sort(func);
 function func(a, b) {  
   return 0.5 - Math.random();
 } 
-   
+
 let arrGuessNumber = gN.slice(3,7);
+
+let primero = arrGuessNumber[0];
+let segundo = arrGuessNumber[1];
+let tercero = arrGuessNumber[2];
+let cuarto = arrGuessNumber[3];
+
 
 guessNumber = arrGuessNumber.join("");
 
-//console.log(guessNumber);
+console.log(guessNumber, primero, segundo, tercero, cuarto);
 
 let boton = document.getElementsByClassName ("botonClick");
 
@@ -22,74 +28,38 @@ let intentos = [];
 
 let arrBtn = [];
 
+let chances = [];
 
+let chance = 0;
 
 for (i=0;i<10;i++){
   arrBtn.push ("btn"+i); 
+  chances.push ("chance"+i); 
 }
+console.log(chances);
 
 for (const elem of arrBtn){
   document.getElementById(elem).addEventListener("click", ()=> {myFunction(arrBtn.indexOf(elem))}); 
 }
 
-/* document.getElementById("btn0").addEventListener("click", ()=> {myFunction("btn0")}); 
-document.getElementById("btn1").addEventListener("click", ()=> {myFunction("btn1")}); 
-document.getElementById("btn2").addEventListener("click", ()=> {myFunction("btn2")}); 
-document.getElementById("btn3").addEventListener("click", ()=> {myFunction("btn3")}); 
-document.getElementById("btn4").addEventListener("click", ()=> {myFunction("btn4")}); 
-document.getElementById("btn5").addEventListener("click", ()=> {myFunction("btn5")}); 
-document.getElementById("btn6").addEventListener("click", ()=> {myFunction("btn6")}); 
-document.getElementById("btn7").addEventListener("click", ()=> {myFunction("btn7")}); 
-document.getElementById("btn8").addEventListener("click", ()=> {myFunction("btn8")}); 
-document.getElementById("btn9").addEventListener("click", ()=> {myFunction("btn9")});  */
-
-
-
-
-
-
-
-
-
 function myFunction(a) {
-  if (intentos.length <4){
-    if (intentos.some ((el) => el == a) == false){
-      
-        if (intentos[0] < 0 && intentos[0] > 9 && intentos[0] != undefined){
-          x[0].innerText = a;
-          intentos.push(a);
+  if (intentos.length <4 && intentos.some ((el) => el == a) == false){
+    intentos.push(a);
+    
+    x = document.getElementsByClassName("styleDiv")
+    for (i=0; i<intentos.length; i++){ 
+          x[i].innerText = intentos[i];
         }
-      }
   }
   console.log(intentos);
 }
-    /* else{
-        if (x[0] == ""){
-          const textnode = document.createTextNode(a);
-          x[0].innerText = node;
-          intentos.push(a);
-        } else if (x[1] == ""){
-          const textnode = document.createTextNode(a);
-          x[1].innerText = node;
-          intentos.push(a);
-        } else if (x[2] == ""){
-          const textnode = document.createTextNode(a);
-          x[2].innerText = node;
-          intentos.push(a);
-        } else if (x[3] == ""){
-          const textnode = document.createTextNode(a);
-          x[3].innerText = node;
-          intentos.push(a);
-        }
-      }
-    }
-  } */ 
- 
-
-//document.getElementById("btnBorrar").addEventListener("click", Borrar);
 
 
-/* function Borrar(){
+document.getElementById("btnBorrar").addEventListener("click", Borrar);
+
+document.getElementById("btnConfirm").addEventListener("click", Confirmar);
+
+function Borrar(){
   intentos.pop();
   let x = document.getElementsByClassName("styleDiv");
   for (i=0; i<x.length; i++){
@@ -98,5 +68,33 @@ function myFunction(a) {
   for (i=0; i<intentos.length; i++){
     x[i].innerText = intentos[i];
   }
+}
 
-} */
+function Confirmar(){
+  if (intentos.length== 4){
+  b = 0;
+  mb = 0;
+  
+  for (i=0; i<intentos.length; i++){
+    if (intentos[i] == arrGuessNumber[i]){
+      mb++
+    } else if(arrGuessNumber.includes (intentos[i]) == true){
+      b++
+    }
+  }
+
+  let fill = document.getElementById (chances[0]);
+  const textNumber = document.createTextNode(`${intentos.join("")}      ${mb}      ${b}`);
+  fill.classList.add('chanceStyleDiv');
+  fill.appendChild(textNumber);
+
+  console.log(textNumber);
+
+  chances.shift();
+
+  Borrar();
+  Borrar();
+  Borrar();
+  Borrar();
+} 
+}

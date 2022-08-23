@@ -10,25 +10,53 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
+    
     border-width: 1vh;
-    border: red solid;
-    height: 20vw;
-    width: 30vh;
-    position: absolute;
-    /* margin-top: -22.5vw;
-    margin-left: 13.3vh; */
+    height: 30vw;
+    width: 50vh;
+    margin-left: 5vh;
+}
+body{
+    background-color: rgba(254, 231, 128, 0.759);
 }
 #verIntento{
     border-width: 1vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     border: red solid;
-    height: 5vw;
-    width: 30vh;
+    margin-top: 10vh;
+    height: 12vw;
+    width: 50vh;
     position: relative;
-    margin-left: 50%;
-   /*  margin-top: -17.5vw;
-    margin-left: 63.3vh; */
+    margin-left: 5vh;
 
-
+}
+.botonClick{
+    height: 8vh;
+    font-size: 4vw;
+    border: none;
+    color: white;
+    background: rgb(0,0,0);
+    background: radial-gradient(circle, rgba(255, 255, 255, 100) 3%, rgb(27, 29, 25) 16%);
+}
+#chance1, #chance2, #chance3, #chance4, #chance5, #chance6, #chance7, #chance8, #chance9, #chance0{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: blue solid;
+    height: 3vw;
+    width: 20vh;
+    position: relative;
+    
+    margin-top: 0.5vh;
+}
+.resultados{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    height: 35vh;
+    border: black solid;
+    margin-top: 60vh;
 }
