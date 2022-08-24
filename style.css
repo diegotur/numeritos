@@ -10,11 +10,15 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    
-    border-width: 1vh;
-    height: 30vw;
+    row-gap: 6%;
+    column-gap: 6%;
+    border-width: 2%;
+    border-radius: 5%;
+    padding: 3%;
+    height:45vw;
     width: 50vh;
     margin-left: 5vh;
+    background-color: black;
 }
 body{
     background-color: rgba(254, 231, 128, 0.759);
@@ -32,12 +36,13 @@ body{
 
 }
 .botonClick{
-    height: 8vh;
+    height: 100%;
+    width: 100%;
     font-size: 4vw;
     border: none;
-    color: white;
-    background: rgb(0,0,0);
-    background: radial-gradient(circle, rgba(255, 255, 255, 100) 3%, rgb(27, 29, 25) 16%);
+    color: black;
+    background: rgb(0,100,0);
+    background: radial-gradient(circle, rgba(255, 255, 255, 20) 15%, rgb(27, 29, 25) 56%);
 }
 #chance1, #chance2, #chance3, #chance4, #chance5, #chance6, #chance7, #chance8, #chance9, #chance0{
     display: flex;
