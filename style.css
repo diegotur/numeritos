@@ -12,37 +12,48 @@
     grid-template-rows: 1fr 1fr 1fr 1fr;
     row-gap: 6%;
     column-gap: 6%;
-    border-width: 2%;
-    border-radius: 5%;
-    padding: 3%;
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+
+    padding: 3% 2% 5% 3%;
     height:45vw;
-    width: 50vh;
-    margin-left: 5vh;
+    width: 35vh;
     background-color: black;
 }
-body{
+.main{
+    display: grid;
+
+    justify-items: center;
+}
+.body{
     background-color: rgba(254, 231, 128, 0.759);
 }
 #verIntento{
     border-width: 1vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    border: red solid;
+    /* From https://css.glass */
+background: rgba(118, 208, 70, 0.59);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6.5px);
+-webkit-backdrop-filter: blur(6.5px);
+border: 1px solid rgba(118, 208, 70, 1);
     margin-top: 10vh;
-    height: 12vw;
-    width: 50vh;
+    height:20vw;
+    border: 4px solid black ;
+    width: 37.5vh;
     position: relative;
-    margin-left: 5vh;
 
 }
 .botonClick{
-    height: 100%;
-    width: 100%;
+    height: 120%;
+    width: 80%;
     font-size: 4vw;
     border: none;
     color: black;
     background: rgb(0,100,0);
-    background: radial-gradient(circle, rgba(255, 255, 255, 20) 15%, rgb(27, 29, 25) 56%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 20) 18%, rgb(27, 29, 25) 56%);
 }
 #chance1, #chance2, #chance3, #chance4, #chance5, #chance6, #chance7, #chance8, #chance9, #chance0{
     display: flex;
