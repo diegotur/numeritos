@@ -12,13 +12,23 @@
     grid-template-rows: 1fr 1fr 1fr 1fr;
     row-gap: 6%;
     column-gap: 6%;
-    border-bottom-left-radius: 5%;
-    border-bottom-right-radius: 5%;
-
     padding: 3% 2% 5% 3%;
     height:45vw;
-    width: 35vh;
+    width: 30vh;
+    
     background-color: black;
+    
+}
+.botonClick{
+    height: 120%;
+    width: 100%;
+    font-size: 6vw;
+    font-family: 'Quantico', sans-serif;
+    color: rgba(0, 0, 0, 0.616);
+    border: none;
+    background-color: transparent;
+    background: rgb(0,0,0);
+    background: radial-gradient(circle, rgba(255, 255, 255, 20) 48%, rgb(0, 0, 0) 56%);
 }
 .main{
     display: grid;
@@ -29,32 +39,21 @@
     background-color: rgba(254, 231, 128, 0.759);
 }
 #verIntento{
-    border-width: 1vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    /* From https://css.glass */
-background: rgba(118, 208, 70, 0.59);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(6.5px);
--webkit-backdrop-filter: blur(6.5px);
-border: 1px solid rgba(118, 208, 70, 1);
     margin-top: 10vh;
-    height:20vw;
-    border: 4px solid black ;
-    width: 37.5vh;
-    position: relative;
+    height:10vw;
+    color: rgba(53, 6, 6, 0.493);
+    font-size: 12vw;
+    justify-items: center;
+    background-color: rgb(104, 235, 104);
+    padding: 3% 2% 5% 3%;
+    width: 30vh;
+    font-family: 'Changa One', cursive;
+    background-image: url(./imagenes/greenBG.jfif);
+    background-size: 200% 400%;
+}
 
-}
-.botonClick{
-    height: 120%;
-    width: 80%;
-    font-size: 4vw;
-    border: none;
-    color: black;
-    background: rgb(0,100,0);
-    background: radial-gradient(circle, rgba(255, 255, 255, 20) 18%, rgb(27, 29, 25) 56%);
-}
 #chance1, #chance2, #chance3, #chance4, #chance5, #chance6, #chance7, #chance8, #chance9, #chance0{
     display: flex;
     justify-content: space-around;
