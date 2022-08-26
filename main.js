@@ -59,11 +59,11 @@ function myFunction(a) {
 }
 
 
-document.getElementById("btnBorrar").addEventListener("click", Borrar) );
-document.getElementById("btnBorrar").addEventListener("mouseup", Rest);
+document.getElementById("btnBorrar").addEventListener("click", Borrar);
+//document.getElementById("btnBorrar").addEventListener("mouseup", Rest);
 
-document.getElementById("btnConfirm").addEventListener("click", Confirmar, luz("btnBorrar") );
-document.getElementById("btnConfirm").addEventListener("mouseup", Rest);
+document.getElementById("btnConfirm").addEventListener("click", Confirmar);
+//document.getElementById("btnConfirm").addEventListener("mouseup", Rest);
 
 function Borrar(){
   intentos.pop();
@@ -76,21 +76,21 @@ function Borrar(){
   }
   
 }
-function Rest(a){
+/* function Rest(a){
   setTimeout (function(){
     a.style.backgroundColor="#4a3838";
     a.style.color="rgba(254, 253, 253, 0.616)";
     a.style.transition = "all 0.5s";
 
   }, 250);
-}
-function luz(a){
+} */
+/* function luz(a){
   setTimeout (function(){
     document.getElementById(a).style.backgroundColor="white";
     document.getElementById(a).style.color="black";
     document.getElementById(a).style.transition = "all 0.5s";
   }, 250);
-}
+} */
 
 function Confirmar(){
   if (intentos.length== 4){
@@ -106,9 +106,83 @@ function Confirmar(){
   }
 
   let fill = document.getElementById (chances[0]);
-  const textNumber = document.createTextNode(`${intentos.join("")}      ${mb}      ${b}`);
-  fill.classList.add('chanceStyleDiv');
+  //const textNumber = document.createTextNode(`${intentos.join("")}${mb}${b}`);
+  const textNumber = document.createTextNode(`${intentos.join("")}`);
+  let fill2 = document.createElement("div"); 
+  let fill3 = document.createElement("div"); 
+  let fill4 = document.createElement("div"); 
+  let fill5 = document.createElement("div"); 
+
+  fill2.classList.add('chanceStyleDiv');
+  fill3.classList.add('chanceStyleDiv');
+  fill4.classList.add('chanceStyleDiv');
+  fill5.classList.add('chanceStyleDiv');
+  
+  if (mb == 4){
+    fill2.style.backgroundColor = "green";
+    fill3.style.backgroundColor = "green";
+    fill4.style.backgroundColor = "green";
+    fill5.style.backgroundColor = "green";
+  }
+  if (mb == 3){
+    fill2.style.backgroundColor = "green";
+    fill3.style.backgroundColor = "green";
+    fill4.style.backgroundColor = "green";
+  }
+  if (mb == 2){
+    fill2.style.backgroundColor = "green";
+    fill3.style.backgroundColor = "green";
+  }
+  if (mb == 1){
+    fill2.style.backgroundColor = "green";
+  }
+  if (mb == 3 && b == 1){
+    fill5.style.backgroundColor = "green";
+  }
+  if (mb == 2 && b == 1){
+    fill4.style.backgroundColor = "yellow";
+  }
+  if (mb == 2 && b == 2){
+    fill4.style.backgroundColor = "yellow";
+    fill5.style.backgroundColor = "yellow";
+  }
+  if (mb == 1 && b == 3){
+    fill3.style.backgroundColor = "yellow";
+    fill4.style.backgroundColor = "yellow";
+    fill5.style.backgroundColor = "yellow";
+  }
+  if (mb == 1 && b == 2){
+    fill3.style.backgroundColor = "yellow";
+    fill4.style.backgroundColor = "yellow";
+  }
+  if (mb == 1 && b == 1){
+    fill3.style.backgroundColor = "yellow";
+  }
+  if (mb == 0 && b == 4){
+    fill2.style.backgroundColor = "yellow";
+    fill3.style.backgroundColor = "yellow";
+    fill4.style.backgroundColor = "yellow";
+    fill5.style.backgroundColor = "yellow";
+  }
+  if (mb == 0 && b == 3){
+    fill2.style.backgroundColor = "yellow";
+    fill3.style.backgroundColor = "yellow";
+    fill4.style.backgroundColor = "yellow";
+  }
+  if (mb == 0 && b == 2){
+    fill2.style.backgroundColor = "yellow";
+    fill3.style.backgroundColor = "yellow";
+  }
+  if (mb == 0 && b == 1){
+    fill2.style.backgroundColor = "yellow";
+  }
+
+  
   fill.appendChild(textNumber);
+  fill.appendChild(fill2);
+  fill.appendChild(fill3);
+  fill.appendChild(fill4);
+  fill.appendChild(fill5);
 
   console.log(textNumber);
 
