@@ -15,20 +15,28 @@
     padding: 3% 2% 5% 3%;
     height:45vw;
     width: 30vh;
-    
-    background-color: black;
-    
+    background-color: #4a3838;
+}
+#caja{
+    height: 8.5vw;
+    width: 30vh;
+    z-index: 10;
+    padding: 3% 2% 5% 3%;
+    margin-top: 17.5vw;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(2.5px);
+    -webkit-backdrop-filter: blur(2.5px);
 }
 .botonClick{
     height: 120%;
-    width: 100%;
+    width: 105%;
     font-size: 6vw;
     font-family: 'Quantico', sans-serif;
-    color: rgba(0, 0, 0, 0.616);
+    color: rgba(254, 253, 253, 0.616);
     border: none;
-    background-color: transparent;
-    background: rgb(0,0,0);
-    background: radial-gradient(circle, rgba(255, 255, 255, 20) 48%, rgb(0, 0, 0) 56%);
+    background-color: #4a3838;
+    z-index: 100;
 }
 .main{
     display: grid;
@@ -43,15 +51,16 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin-top: 10vh;
     height:10vw;
-    color: rgba(53, 6, 6, 0.493);
+    color: rgb(45, 42, 42);
     font-size: 12vw;
     justify-items: center;
-    background-color: rgb(104, 235, 104);
-    padding: 3% 2% 5% 3%;
+    align-items: center;
+    background-color: #418036;
+    padding: 1% 2% 6% 3%;
     width: 30vh;
-    font-family: 'Changa One', cursive;
-    background-image: url(./imagenes/greenBG.jfif);
-    background-size: 200% 400%;
+    font-family: 'Quantico', sans-serif;
+    
+    /* background-image: url(./imagenes/greenBG.jfif); */ 
 }
 
 #chance1, #chance2, #chance3, #chance4, #chance5, #chance6, #chance7, #chance8, #chance9, #chance0{

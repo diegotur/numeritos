@@ -22,6 +22,8 @@ let boton = document.getElementsByClassName ("botonClick");
 
 let verIntento = document.getElementById ("verIntento");
 
+let borrar = document.getElementById ("btnBorrar");
+
 let x = document.getElementsByClassName ("styleDiv");
 
 let intentos = [];
@@ -39,8 +41,10 @@ for (i=0;i<10;i++){
 console.log(chances);
 
 for (const elem of arrBtn){
-  document.getElementById(elem).addEventListener("click", ()=> {myFunction(arrBtn.indexOf(elem))}); 
+  document.getElementById(elem).addEventListener("click", ()=> {myFunction(arrBtn.indexOf(elem))});
+  //document.getElementById(elem).addEventListener("click", Borrar, luz(elem) );
 }
+
 
 function myFunction(a) {
   if (intentos.length <4 && intentos.some ((el) => el == a) == false){
@@ -55,9 +59,11 @@ function myFunction(a) {
 }
 
 
-document.getElementById("btnBorrar").addEventListener("click", Borrar);
+document.getElementById("btnBorrar").addEventListener("click", Borrar) );
+document.getElementById("btnBorrar").addEventListener("mouseup", Rest);
 
-document.getElementById("btnConfirm").addEventListener("click", Confirmar);
+document.getElementById("btnConfirm").addEventListener("click", Confirmar, luz("btnBorrar") );
+document.getElementById("btnConfirm").addEventListener("mouseup", Rest);
 
 function Borrar(){
   intentos.pop();
@@ -68,6 +74,22 @@ function Borrar(){
   for (i=0; i<intentos.length; i++){
     x[i].innerText = intentos[i];
   }
+  
+}
+function Rest(a){
+  setTimeout (function(){
+    a.style.backgroundColor="#4a3838";
+    a.style.color="rgba(254, 253, 253, 0.616)";
+    a.style.transition = "all 0.5s";
+
+  }, 250);
+}
+function luz(a){
+  setTimeout (function(){
+    document.getElementById(a).style.backgroundColor="white";
+    document.getElementById(a).style.color="black";
+    document.getElementById(a).style.transition = "all 0.5s";
+  }, 250);
 }
 
 function Confirmar(){
