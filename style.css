@@ -9,12 +9,15 @@
 
 .body{
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: 2fr 10fr 1fr;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 1fr 12fr 1fr;
     grid-template-areas: 
     "cabecera cabecera cabecera"
     "aside1 main aside2"
     "pie pie pie";
+    background-color: bisque;
+    height: 100vh;
+    width: 100vw;
 }
 .padBtn{
     grid-area: pad;
@@ -47,7 +50,8 @@
     "pad"
     "resultado";
     justify-items: center;
-    background-color: rgba(201, 123, 5, 0.65)
+    background-color: rgba(201, 123, 5, 0.65);
+    box-shadow: 2px 2px 20px black;
 }
 /* .caja{
     height:100vh;
@@ -100,6 +104,7 @@
     height: 100%;
     justify-items:center;
     align-items: center;
+    
     /*  background-color: rgba(201, 123, 5, 0.35); */
 }
 .caja1, .caja2{
@@ -122,18 +127,18 @@
 
 .aside1{
     grid-area: aside1;
-    background-color: blue;
+    box-shadow: 2px 2px 20px black;
 }
 
 .aside2{
     grid-area: aside2;
-    background-color: yellow;
+    box-shadow: 2px 2px 20px black;
 }
 .header{
     grid-area: cabecera;
-    background-color: orange;
+    box-shadow: 2px 2px 20px black;
 }
 .footer{
     grid-area: pie;
-    background-color: red;
+    box-shadow: 2px 2px 20px black;
 }
