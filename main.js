@@ -106,7 +106,6 @@ function Confirmar(){
   }
 
   let fill = document.getElementById (chances[0]);
-  //const textNumber = document.createTextNode(`${intentos.join("")}${mb}${b}`);
   const textNumber = document.createTextNode(`${intentos.join("")}`);
   let fill2 = document.createElement("div"); 
   let fill3 = document.createElement("div"); 

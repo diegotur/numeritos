@@ -6,29 +6,46 @@
     width: 3.2vw;
     height: 3.2vw; 
 } */
+
+.body{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 2fr 10fr 1fr;
+    grid-template-areas: 
+    "cabecera cabecera cabecera"
+    "aside1 main aside2"
+    "pie pie pie";
+}
 .padBtn{
+    grid-area: pad;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    row-gap: 6%;
-    column-gap: 6%;
-    padding: 3% 2% 5% 3%;
-    height:45vw;
-    width: 30vh;
-    background-color: #4a3838;
+    /* row-gap: 6%;
+    column-gap: 6%; */
+    width: 100%;
+    height: 100%;
+    /* background-color: #4a3838; */
 }
 
 .botonClick{
-    height: 120%;
-    width: 105%;
     font-size: 6vw;
     font-family: 'Quantico', sans-serif;
     color: rgba(254, 253, 253, 0.616);
-    border: none;
+    padding: 0;
+    margin: 0;
+    border: double 1px grey;
     background-color: #4a3838;
 }
 .main{
+    grid-area: main;
     display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr 2fr;
+    grid-template-areas: 
+    "intento"
+    "pad"
+    "resultado";
     justify-items: center;
     background-color: rgba(201, 123, 5, 0.65)
 }
@@ -45,58 +62,78 @@
     background-size: cover; */
 
 #verIntento{
+    grid-area: intento;
     display: grid;
+    position: relative;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin-top: 10vh;
-    height:10vw;
     color: rgb(45, 42, 42);
-    font-size: 12vw;
+    font-size: 8vw;
     justify-items: center;
     align-items: center;
     background-color: #418036;
-    padding: 1% 2% 6% 3%;
-    
-    width: 30vh;
+    width: 100%;
+    height: 100%;
     font-family: 'Quantico', sans-serif;
     
-    /* background-image: url(./imagenes/greenBG.jfif); */ 
 }
 
-#chance1, #chance2, #chance3, #chance4, #chance5, #chance6, #chance7, #chance8, #chance9, #chance0{
-    display: flex;
-    justify-content: space-around;
+ #chance1, #chance2, #chance3, #chance4, #chance5, #chance6, #chance7, #chance8, #chance9, #chance0{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-items: center;
     align-items: center;
-    height: 4vw;
-    width: 25vh;
     position: relative;
-    background-color: rgba(201, 123, 5, 0.55);    
+    font-size: 2.5vw;
+    height: 85%;
+    width: 96%;
+    margin: 0;
+    border: solid orange 0.1px;
+    padding: 0;
+    background-color: rgb(238, 199, 92);   
     font-family: 'Quantico', sans-serif;
-    margin-top: 1.8vh;
-}
+} 
 .resultados{
+    grid-area: resultado;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    justify-content: center;
+    width: 100%;
+    height: 100%;
+    justify-items:center;
     align-items: center;
-    padding: 0% 2% 0% 3%;
-    height:38vw;
-    width: 95%;
-    background-color: rgba(201, 123, 5, 0.35);
+    /*  background-color: rgba(201, 123, 5, 0.35); */
 }
-.caja1{
+.caja1, .caja2{
     display: grid;
-    justify-items: center;
-    margin-top: -4vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    width: 100%;
+    height: 100%;
+    justify-items:center;
+    align-items: center;
 }
 
-.caja2{
-    display: grid;
-    justify-items: center;
-    margin-top: -4vw;
-}
+
 .chanceStyleDiv{
     border-radius: 100%;
     width: 5px;
-    height: 5px ;
+    height: 5px;
+    background-color: red;
+}
+
+.aside1{
+    grid-area: aside1;
+    background-color: blue;
+}
+
+.aside2{
+    grid-area: aside2;
+    background-color: yellow;
+}
+.header{
+    grid-area: cabecera;
+    background-color: orange;
+}
+.footer{
+    grid-area: pie;
     background-color: red;
 }
