@@ -1,29 +1,33 @@
-#pad{
-    margin: 10%;
+*{
+    margin: 0;
+    padding: 0;
 }
-/* #btn1{
-    border-radius: 100%;
-    width: 3.2vw;
-    height: 3.2vw; 
-} */
+
+
 
 .body{
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
-    grid-template-rows: 1fr 12fr 1fr;
+    grid-template-rows: 1fr 6fr 1fr;
     grid-template-areas: 
     "cabecera cabecera cabecera"
     "aside1 main aside2"
     "pie pie pie";
-    background-color: bisque;
-    height: 100vh;
+    background-color: rgb(255, 244, 196);
+    height: 100%;
     width: 100vw;
+    z-index: 100;
+    background: rgba(39, 11, 11, 0.148);
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(2.5px);
+    
 }
 .padBtn{
     grid-area: pad;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
+    box-shadow: 2px 2px 10px black;
     /* row-gap: 6%;
     column-gap: 6%; */
     width: 100%;
@@ -37,60 +41,64 @@
     color: rgba(254, 253, 253, 0.616);
     padding: 0;
     margin: 0;
-    border: double 1px grey;
+    
+    /* border: double 1px grey; */
+    box-shadow: 2px 2px 10px black;
     background-color: #4a3838;
 }
 .main{
     grid-area: main;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 3fr 2fr;
+    grid-template-rows: 1.5fr 2.5fr 2.5fr;
     grid-template-areas: 
     "intento"
     "pad"
     "resultado";
     justify-items: center;
     background-color: rgba(201, 123, 5, 0.65);
-    box-shadow: 2px 2px 20px black;
+    box-shadow: 2px 2px 10px black;
 }
-/* .caja{
-    height:100vh;
-    width: 100vw;
-    padding: 3% 2% 5% 3%;
+.caja{
+    height:100%;
+    width: 100%;
     z-index: 100;
     position: absolute;
-    background: rgba(39, 11, 11, 0.148);
-    backdrop-filter: blur(1.5px);
-    -webkit-backdrop-filter: blur(2.5px);
+    background: rgba(39, 11, 11, 0.088);
+    backdrop-filter: blur(3.5px);
+    -webkit-backdrop-filter: blur(3.5px);
     /* background-image: url(./imagenes/greenBG.jfif);
     background-size: cover; */
-
+}
 #verIntento{
     grid-area: intento;
     display: grid;
     position: relative;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     color: rgb(45, 42, 42);
-    font-size: 8vw;
+    font-size: 14vw;
+    z-index: 1;
     justify-items: center;
+    box-shadow: 2px 2px 10px black;
     align-items: center;
     background-color: #418036;
     width: 100%;
     height: 100%;
     font-family: 'Quantico', sans-serif;
-    
 }
 
- #chance1, #chance2, #chance3, #chance4, #chance5, #chance6, #chance7, #chance8, #chance9, #chance0{
+
+#chance1, #chance2, #chance3, #chance4, #chance5, #chance6, #chance7, #chance8, #chance9, #chance0{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     justify-items: center;
     align-items: center;
     position: relative;
-    font-size: 2.5vw;
+    font-size: 4.5vw;
     height: 85%;
     width: 96%;
     margin: 0;
+    box-shadow: 2px 2px 10px black;
     border: solid orange 0.1px;
     padding: 0;
     background-color: rgb(238, 199, 92);   
@@ -115,30 +123,37 @@
     height: 100%;
     justify-items:center;
     align-items: center;
+    box-shadow: 2px 2px 10px black;
 }
 
 
 .chanceStyleDiv{
     border-radius: 100%;
-    width: 5px;
-    height: 5px;
+    width: 10px;
+    height: 10px;
     background-color: red;
 }
-
+.styleDiv{
+    margin: 0;
+    padding: 0;
+    transform: scale(1, 1.6);
+}   
 .aside1{
     grid-area: aside1;
-    box-shadow: 2px 2px 20px black;
+    box-shadow: 2px 2px 10px black;
 }
 
 .aside2{
     grid-area: aside2;
-    box-shadow: 2px 2px 20px black;
+    box-shadow: 2px 2px 10px black;
 }
 .header{
+    z-index: 10000;
     grid-area: cabecera;
-    box-shadow: 2px 2px 20px black;
+    box-shadow: 2px 2px 10px black;
 }
 .footer{
     grid-area: pie;
-    box-shadow: 2px 2px 20px black;
+    z-index: 10;
+    box-shadow: 2px 2px 10px black;
 }

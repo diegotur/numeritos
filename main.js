@@ -41,12 +41,12 @@ for (i=0;i<10;i++){
 console.log(chances);
 
 for (const elem of arrBtn){
-  document.getElementById(elem).addEventListener("click", ()=> {myFunction(arrBtn.indexOf(elem))});
+  document.getElementById(elem).addEventListener("click", ()=> {Write(arrBtn.indexOf(elem))});
   //document.getElementById(elem).addEventListener("click", Borrar, luz(elem) );
 }
 
 
-function myFunction(a) {
+function Write(a) {
   if (intentos.length <4 && intentos.some ((el) => el == a) == false){
     intentos.push(a);
     
