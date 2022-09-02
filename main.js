@@ -38,7 +38,6 @@ for (i=0;i<10;i++){
   arrBtn.push ("btn"+i); 
   chances.push ("chance"+i); 
 }
-console.log(chances);
 
 for (const elem of arrBtn){
   document.getElementById(elem).addEventListener("click", ()=> {Write(arrBtn.indexOf(elem))});
@@ -107,15 +106,16 @@ function Confirmar(){
 
   let fill = document.getElementById (chances[0]);
   const textNumber = document.createTextNode(`${intentos.join("")}`);
+  
   let fill2 = document.createElement("div"); 
   let fill3 = document.createElement("div"); 
   let fill4 = document.createElement("div"); 
   let fill5 = document.createElement("div"); 
 
-  fill2.classList.add('chanceStyleDiv');
-  fill3.classList.add('chanceStyleDiv');
-  fill4.classList.add('chanceStyleDiv');
-  fill5.classList.add('chanceStyleDiv');
+  fill2.classList.add("chanceStyleDiv");
+  fill3.classList.add("chanceStyleDiv");
+  fill4.classList.add("chanceStyleDiv");
+  fill5.classList.add("chanceStyleDiv");
   
   if (mb == 4){
     fill2.style.backgroundColor = "green";
@@ -183,7 +183,7 @@ function Confirmar(){
   fill.appendChild(fill4);
   fill.appendChild(fill5);
 
-  console.log(textNumber);
+  console.log(chances);
 
   chances.shift();
 
@@ -193,3 +193,47 @@ function Confirmar(){
   Borrar();
 } 
 }
+let restartGame = document.getElementById("btnFooter1");
+
+restartGame.addEventListener("click", Restart);
+
+function Restart(){
+  gN = numero.sort(func);  
+
+function func(a, b) {  
+  return 0.5 - Math.random();
+} 
+
+arrGuessNumber = gN.slice(3,7);
+
+primero = arrGuessNumber[0];
+segundo = arrGuessNumber[1];
+tercero = arrGuessNumber[2];
+cuarto = arrGuessNumber[3];
+
+
+guessNumber = arrGuessNumber.join("");
+
+chances=[];
+
+for (i=0;i<10;i++){
+  chances.push ("chance"+i); 
+}
+
+/* for (i=0; i<10;i++){
+  for (g=0; g<5;g++){ */
+    /* let p = document.getElementsByClassName("chanceStyleDiv");
+    p[0].remove();
+    p[0].remove();
+    p[0].remove();
+    p[0].remove(); */
+    for (g=0; g<5;g++){
+    let f = document.getElementById("chance0");
+    f.removeChild(f.lastChild);
+
+    console.log(guessNumber);
+  }
+/*   }
+} */
+}
+
