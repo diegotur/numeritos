@@ -34,6 +34,10 @@ let chances = [];
 
 let chance = 0;
 
+
+
+
+
 for (i=0;i<10;i++){
   arrBtn.push ("btn"+i); 
   chances.push ("chance"+i); 
@@ -183,7 +187,9 @@ function Confirmar(){
   fill.appendChild(fill4);
   fill.appendChild(fill5);
 
-  console.log(chances);
+  chance++;
+
+  console.log(chance);
 
   chances.shift();
 
@@ -214,26 +220,25 @@ cuarto = arrGuessNumber[3];
 
 guessNumber = arrGuessNumber.join("");
 
+let vecesChances = chance;
+
 chances=[];
 
 for (i=0;i<10;i++){
   chances.push ("chance"+i); 
 }
 
-/* for (i=0; i<10;i++){
-  for (g=0; g<5;g++){ */
-    /* let p = document.getElementsByClassName("chanceStyleDiv");
-    p[0].remove();
-    p[0].remove();
-    p[0].remove();
-    p[0].remove(); */
-    for (g=0; g<5;g++){
-    let f = document.getElementById("chance0");
-    f.removeChild(f.lastChild);
 
-    console.log(guessNumber);
+for (const elem of chances){
+  if (vecesChances != 0){
+
+    for (g=0; g<5;g++){
+      let f = document.getElementById(elem);
+      f.removeChild(f.lastChild);
+    }
+    vecesChances--;
   }
-/*   }
-} */
+}
+chance=0;
 }
 

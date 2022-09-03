@@ -2,13 +2,9 @@
     margin: 0;
     padding: 0;
 }
-
-
-
 .body{
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
-    /* grid-template-rows: 0.5fr 2fr 0.2fr; */
     grid-template-areas: 
     "cabecera cabecera cabecera"
     "aside1 main aside2"
@@ -28,13 +24,9 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     box-shadow: 2px 2px 10px black;
-    /* row-gap: 6%;
-    column-gap: 6%; */
     width: 100%;
     height: 100%;
-    /* background-color: #4a3838; */
 }
-
 .botonClick{
     font-size: 6vw;
     font-family: 'Quantico', sans-serif;
@@ -67,17 +59,17 @@
     -webkit-backdrop-filter: blur(3.5px);
 }
 .caja5{
-    height:12.5%;
+    height: 100%;
     width: 100%;
     z-index: 100;
-    position: absolute;
     background: rgba(8, 0, 9, 0.288);
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
+    display: grid;
+    justify-items: center;
+    align-items: center;
 }
 .botonesFooter{
-    /* height: 100%;
-    width: 100%; */
     display: grid;
 }
 #verIntento{
@@ -158,7 +150,6 @@
     box-shadow: 2px 2px 10px black;
 }
 .header{
-    z-index: 10000;
     grid-area: cabecera;
     box-shadow: 2px 2px 10px black;
     font-size: 6vw;
