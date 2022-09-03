@@ -1,3 +1,7 @@
+let arrGuessNumber = [];
+
+function GenerarNumero(){
+
 let numero=[0,1,2,3,4,5,6,7,8,9];
 
 let gN = numero.sort(func);  
@@ -6,17 +10,14 @@ function func(a, b) {
   return 0.5 - Math.random();
 } 
 
-let arrGuessNumber = gN.slice(3,7);
-
-let primero = arrGuessNumber[0];
-let segundo = arrGuessNumber[1];
-let tercero = arrGuessNumber[2];
-let cuarto = arrGuessNumber[3];
-
+arrGuessNumber = gN.slice(3,7);
 
 guessNumber = arrGuessNumber.join("");
+console.log(guessNumber);
+}
 
-console.log(guessNumber, primero, segundo, tercero, cuarto);
+GenerarNumero();
+
 
 let boton = document.getElementsByClassName ("botonClick");
 
@@ -37,15 +38,19 @@ let chance = 0;
 
 
 
-
 for (i=0;i<10;i++){
   arrBtn.push ("btn"+i); 
   chances.push ("chance"+i); 
 }
 
 for (const elem of arrBtn){
+  document.getElementById(elem).addEventListener("click", ()=> {Rest(document.getElementById(elem))});
+  document.getElementById(elem).addEventListener("click", ()=> {Rest2(document.getElementById(elem))});
+}
+
+for (const elem of arrBtn){
   document.getElementById(elem).addEventListener("click", ()=> {Write(arrBtn.indexOf(elem))});
-  //document.getElementById(elem).addEventListener("click", Borrar, luz(elem) );
+  //document.getElementById(elem).addEventListener("click", Rest(elem));
 }
 
 
@@ -58,12 +63,12 @@ function Write(a) {
           x[i].innerText = intentos[i];
         }
   }
-  console.log(intentos);
 }
 
 
-document.getElementById("btnBorrar").addEventListener("click", Borrar);
-//document.getElementById("btnBorrar").addEventListener("mouseup", Rest);
+borrar.addEventListener("click", Borrar);
+
+//borrar.addEventListener("click", Rest(borrar));
 
 document.getElementById("btnConfirm").addEventListener("click", Confirmar);
 //document.getElementById("btnConfirm").addEventListener("mouseup", Rest);
@@ -78,6 +83,23 @@ function Borrar(){
     x[i].innerText = intentos[i];
   }
   
+}
+
+function Rest(a){
+  if (intentos.length == 4 || intentos.some ((el) => el == a.textContent) == true){
+  a.style.backgroundColor= "red";
+  } else{
+  a.style.color="rgba(0, 0, 0, 0.616)"
+  a.style.backgroundColor= "white";
+  }
+  
+}
+function Rest2(a){
+  setTimeout (function(){
+  a.style.color="rgba(255, 255, 255, 0.616)"
+  a.style.backgroundColor= "#4a3838";
+  a.style.transition = "all 0.3s";
+}, 250);
 }
 /* function Rest(a){
   setTimeout (function(){
@@ -116,71 +138,25 @@ function Confirmar(){
   let fill4 = document.createElement("div"); 
   let fill5 = document.createElement("div"); 
 
+  let fills = [fill2, fill3, fill4, fill5];
+
   fill2.classList.add("chanceStyleDiv");
   fill3.classList.add("chanceStyleDiv");
   fill4.classList.add("chanceStyleDiv");
   fill5.classList.add("chanceStyleDiv");
   
-  if (mb == 4){
-    fill2.style.backgroundColor = "green";
-    fill3.style.backgroundColor = "green";
-    fill4.style.backgroundColor = "green";
-    fill5.style.backgroundColor = "green";
+  for (i=0; i<mb; i++){
+    fills[i].style.backgroundColor = "green";
   }
-  if (mb == 3){
-    fill2.style.backgroundColor = "green";
-    fill3.style.backgroundColor = "green";
-    fill4.style.backgroundColor = "green";
+  for (t=0; t<b; t++){
+    if (mb == 0){
+      fills[t].style.backgroundColor = "yellow";
+    } else if (mb == 1){
+      fills[t+1].style.backgroundColor = "yellow";
+    } else if (mb == 2){
+      fills[t+2].style.backgroundColor = "yellow";
+    }
   }
-  if (mb == 2){
-    fill2.style.backgroundColor = "green";
-    fill3.style.backgroundColor = "green";
-  }
-  if (mb == 1){
-    fill2.style.backgroundColor = "green";
-  }
-  if (mb == 3 && b == 1){
-    fill5.style.backgroundColor = "green";
-  }
-  if (mb == 2 && b == 1){
-    fill4.style.backgroundColor = "yellow";
-  }
-  if (mb == 2 && b == 2){
-    fill4.style.backgroundColor = "yellow";
-    fill5.style.backgroundColor = "yellow";
-  }
-  if (mb == 1 && b == 3){
-    fill3.style.backgroundColor = "yellow";
-    fill4.style.backgroundColor = "yellow";
-    fill5.style.backgroundColor = "yellow";
-  }
-  if (mb == 1 && b == 2){
-    fill3.style.backgroundColor = "yellow";
-    fill4.style.backgroundColor = "yellow";
-  }
-  if (mb == 1 && b == 1){
-    fill3.style.backgroundColor = "yellow";
-  }
-  if (mb == 0 && b == 4){
-    fill2.style.backgroundColor = "yellow";
-    fill3.style.backgroundColor = "yellow";
-    fill4.style.backgroundColor = "yellow";
-    fill5.style.backgroundColor = "yellow";
-  }
-  if (mb == 0 && b == 3){
-    fill2.style.backgroundColor = "yellow";
-    fill3.style.backgroundColor = "yellow";
-    fill4.style.backgroundColor = "yellow";
-  }
-  if (mb == 0 && b == 2){
-    fill2.style.backgroundColor = "yellow";
-    fill3.style.backgroundColor = "yellow";
-  }
-  if (mb == 0 && b == 1){
-    fill2.style.backgroundColor = "yellow";
-  }
-
-  
   fill.appendChild(textNumber);
   fill.appendChild(fill2);
   fill.appendChild(fill3);
@@ -188,8 +164,6 @@ function Confirmar(){
   fill.appendChild(fill5);
 
   chance++;
-
-  console.log(chance);
 
   chances.shift();
 
@@ -204,21 +178,8 @@ let restartGame = document.getElementById("btnFooter1");
 restartGame.addEventListener("click", Restart);
 
 function Restart(){
-  gN = numero.sort(func);  
-
-function func(a, b) {  
-  return 0.5 - Math.random();
-} 
-
-arrGuessNumber = gN.slice(3,7);
-
-primero = arrGuessNumber[0];
-segundo = arrGuessNumber[1];
-tercero = arrGuessNumber[2];
-cuarto = arrGuessNumber[3];
-
-
-guessNumber = arrGuessNumber.join("");
+ 
+GenerarNumero();
 
 let vecesChances = chance;
 
@@ -240,5 +201,11 @@ for (const elem of chances){
   }
 }
 chance=0;
+
+Borrar();
+Borrar();
+Borrar();
+Borrar();
+
 }
 
