@@ -58,7 +58,7 @@
     backdrop-filter: blur(3.5px);
     -webkit-backdrop-filter: blur(3.5px);
 }
-.caja5{
+.cajaHeader{
     height: 100%;
     width: 100%;
     z-index: 100;
@@ -114,8 +114,6 @@
     height: 100%;
     justify-items:center;
     align-items: center;
-    
-    /*  background-color: rgba(201, 123, 5, 0.35); */
 }
 .caja1, .caja2{
     display: grid;
@@ -127,7 +125,6 @@
     align-items: center;
     box-shadow: 2px 2px 10px black;
 }
-
 
 .chanceStyleDiv{
     border-radius: 100%;
@@ -144,7 +141,6 @@
     grid-area: aside1;
     box-shadow: 2px 2px 10px black;
 }
-
 .aside2{
     grid-area: aside2;
     box-shadow: 2px 2px 10px black;
@@ -167,4 +163,181 @@
     grid-area: pie;
     z-index: 10;
     box-shadow: 2px 2px 10px black;
+}
+@media only screen and (min-width: 768px) {
+    .body{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 1fr 1.5fr 0.2fr;
+        row-gap: 2%;
+        grid-template-areas: 
+        "main cabecera"
+        "main main"
+        "pie pie";
+        background-color: rgb(255, 255, 255);
+        height: 95vh;
+        width: 99vw;
+        margin: 1%;
+        z-index: 100;
+    }
+    .padBtn{
+        grid-area: pad;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        box-shadow: 0 0 0 black;
+        width: 100%;
+        height: 100%;
+    }
+    .botonClick{
+        font-size: 3vw;
+        font-family: 'Quantico', sans-serif;
+        color: rgba(254, 253, 253, 0.616);
+        padding: 0;
+        margin: 0;
+        box-shadow: 0 0 0 black;
+        background-color: #4a3838;
+    }
+    .main{
+        grid-area: main;
+        grid-column: 1/3;
+        grid-row: 1/3;
+        display: grid;
+        grid-template-columns: 0.5fr 1fr;
+        grid-template-rows: 1fr 2.3fr;
+        grid-template-areas: 
+        "intento cabecera"
+        "pad resultado";
+        justify-items: center;
+        background-color: rgba(255, 255, 255, 0.65);
+        box-shadow: 0 0 0 black;
+    }
+    .caja{
+        height:100%;
+        width: 100%;
+        z-index: 100;
+        position: absolute;
+        background: rgba(39, 11, 11, 0.088);
+        backdrop-filter: blur(3.5px);
+        -webkit-backdrop-filter: blur(3.5px);
+    }
+    .cajaHeader{
+        height: 100%;
+        width: 100%;
+        z-index: 100;
+        background: rgba(8, 0, 9, 0.288);
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
+        display: grid;
+        justify-items: center;
+        align-items: center;
+    }
+    .botonesFooter{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        font-size: 3vw;
+        font-family: 'Quantico', sans-serif;
+        color: rgba(254, 253, 253, 0.616);
+        padding: 2%;
+        margin-right: 0.5%;
+        box-shadow: 0 0 0 black;
+        background-color: none;
+    }
+    .btnFooter{
+        margin-bottom: 1%;
+        font-size: 2.5vw;
+        margin: 3%;
+        background-color: #010101;
+    }
+    #verIntento{
+        grid-area: intento;
+        display: grid;
+        position: relative;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        color: rgb(45, 42, 42);
+        font-size: 6vw;
+        z-index: 1;
+        justify-items: center;
+        box-shadow: 0 0 0 black;
+        align-items: center;
+        background-color: #418036;
+        width: 100%;
+        height: 100%;
+        font-family: 'Quantico', sans-serif;
+    }
+    
+    #chance1, #chance2, #chance3, #chance4, #chance5, #chance6, #chance7, #chance8, #chance9, #chance0{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        justify-items: center;
+        align-items: center;
+        position: relative;
+        font-size: 2.5vw;
+        height: 85%;
+        width: 96%;
+        margin: 0;
+        box-shadow: 0 0 0 black;
+        border: solid orange 0;
+        padding: 0;
+        background-color: rgb(238, 199, 92);   
+        font-family: 'Quantico', sans-serif;
+    } 
+    .resultados{
+        grid-area: resultado;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        justify-items:center;
+        align-items: center;
+    }
+    .caja1, .caja2{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        width: 100%;
+        height: 100%;
+        justify-items:center;
+        align-items: center;
+        box-shadow: 0 0 0 black;
+    }
+    .chanceStyleDiv{
+        border-radius: 100%;
+        width: 25px;
+        height: 25px;
+        background-color: red;
+    }
+    .styleDiv{
+        margin: 0;
+        padding: 0;
+        transform: scale(1, 1.6);
+    }   
+    .header{
+        grid-area: cabecera;
+        grid-column: 2 / 3;
+        grid-row: 1/2;
+        box-shadow: 0 0 0 black;
+        font-size: 3.3vw;
+        display: grid;
+        background-color: rgb(255, 244, 196);
+        font-family: 'Press Start 2P', cursive;
+        justify-items: center;
+        z-index: 5;
+        align-items: center;
+        height: 65%;
+        width: 80%;
+        margin-top: 1%;
+        margin-left: 10%;
+    }
+    .fa-solid{
+        font-size: 5vw;
+        padding-top: 2vw;
+        padding-bottom: 1vw;
+    }
+    .footer{
+        grid-area: pie;
+        z-index: 10;
+        box-shadow: 0 0 0 black;
+    }
 }
