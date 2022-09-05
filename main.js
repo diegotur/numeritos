@@ -13,6 +13,8 @@ let arrGuessNumber = [];
   arrGuessNumber = gN.slice(3,7);
 
   guessNumber = arrGuessNumber.join("");
+
+  console.log(guessNumber);
 }
 
 GenerarNumero();
@@ -93,60 +95,72 @@ function Rest2(a){
 }, 350);
 }
 
+
 function Confirmar(){
+  console.log(intentos[0],intentos[1],intentos[2],intentos[3]);
+  if (arrGuessNumber[0] == intentos[0] && arrGuessNumber[1] == intentos[1] && arrGuessNumber[2] == intentos[2] && arrGuessNumber[3] == intentos[3]){
+    Ganador();
+    Restart();
+  } else{
   if (intentos.length== 4){
     b = 0;
     mb = 0;
+
+  for (i=0; i<intentos.length; i++){
+    if (intentos[i] == arrGuessNumber[i]){
+      mb++
+    } else if(arrGuessNumber.includes (intentos[i]) == true){
+      b++
+    }
+  }
+
+  let fill = document.getElementById (chances[0]);
+  const textNumber = document.createTextNode(`${intentos.join("")}`);
+  let fill2 = document.createElement("div"); 
+  let fill3 = document.createElement("div"); 
+  let fill4 = document.createElement("div"); 
+  let fill5 = document.createElement("div"); 
+  let fills = [fill2, fill3, fill4, fill5];
   
-    for (i=0; i<intentos.length; i++){
-      if (intentos[i] == arrGuessNumber[i]){
-        mb++
-      } else if(arrGuessNumber.includes (intentos[i]) == true){
-        b++
-      }
+  for (const elem of fills){
+    elem.classList.add("chanceStyleDiv");
+    console.log (fills[0]);
+  }
+  for (i=0; i<mb; i++){
+    fills[i].style.backgroundColor = "green";
+  }
+  for (t=0; t<b; t++){
+    if (mb == 0){
+      fills[t].style.backgroundColor = "yellow";
+    } else if (mb == 1){
+      fills[t+1].style.backgroundColor = "yellow";
+    } else if (mb == 2){
+      fills[t+2].style.backgroundColor = "yellow";
     }
+  }
+  fill.appendChild(textNumber);
+  fill.appendChild(fill2);
+  fill.appendChild(fill3);
+  fill.appendChild(fill4);
+  fill.appendChild(fill5);
 
-    let fill = document.getElementById (chances[0]);
-    const textNumber = document.createTextNode(`${intentos.join("")}`);
-    let fill2 = document.createElement("div"); 
-    let fill3 = document.createElement("div"); 
-    let fill4 = document.createElement("div"); 
-    let fill5 = document.createElement("div"); 
-    let fills = [fill2, fill3, fill4, fill5];
-    
-    for (const elem of fills){
-      elem.classList.add("chanceStyleDiv");
-      console.log (fills[0]);
-    }
-    for (i=0; i<mb; i++){
-      fills[i].style.backgroundColor = "green";
-    }
-    for (t=0; t<b; t++){
-      if (mb == 0){
-        fills[t].style.backgroundColor = "yellow";
-      } else if (mb == 1){
-        fills[t+1].style.backgroundColor = "yellow";
-      } else if (mb == 2){
-        fills[t+2].style.backgroundColor = "yellow";
-      }
-    }
-    fill.appendChild(textNumber);
-    fill.appendChild(fill2);
-    fill.appendChild(fill3);
-    fill.appendChild(fill4);
-    fill.appendChild(fill5);
-
-    chance++;
-    chances.shift();
-    Borrar();
-    Borrar();
-    Borrar();
-    Borrar(); 
+  chance++;
+  chances.shift();
+  Borrar();
+  Borrar();
+  Borrar();
+  Borrar();
+  
+  if (chances.length==0){
+    Perdedor();
+    Restart();
   } 
+  } 
+} 
 }
 let restartGame = document.getElementById("btnFooter1");
 
-restartGame.addEventListener("click", Restart);
+restartGame.addEventListener("click", Validar);
 
 function Restart(){
 
@@ -178,4 +192,38 @@ function Restart(){
   Borrar();
   Borrar();
 }
+  
+function Validar(){
 
+  swal({
+      title: "Estás seguro?",
+      icon: "warning",
+      buttons: true,
+      
+  }).then((confirm) => {
+      if (confirm) {
+          Restart();
+      } 
+  });
+}
+
+
+function Ganador(){
+
+  swal({
+      title: "FELICITACIONES",
+      text: `Adivinaste en ${11-chances.length} intentos `,
+      icon: "success",
+      button: "Nuevo Juego",
+  })
+}
+
+function Perdedor(){
+
+  swal({
+      title: "NO HAY MÁS INTENTOS",
+      text: "Lo lamento, perdiste",
+      icon: "error",
+      button: "Nuevo Juego",
+  })
+}
