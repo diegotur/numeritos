@@ -23,6 +23,7 @@ let verIntento = document.getElementById ("verIntento");
 let borrar = document.getElementById ("btnBorrar");
 let confirmar = document.getElementById("btnConfirm");
 let x = document.getElementsByClassName ("styleDiv");
+let ranking = document.getElementById("btnFooter4");
 let intentos = [];
 let arrBtn = [];
 let chances = [];
@@ -59,6 +60,7 @@ borrar.addEventListener("click", ()=> {Rest2(borrar)});
 confirmar.addEventListener("click", Confirmar);
 confirmar.addEventListener("click", ()=> {Rest(confirmar, 1)});
 confirmar.addEventListener("click", ()=> {Rest2(confirmar)});
+ranking.addEventListener("click", ()=> {Ranking("ranking.json")});
 
 function Borrar(){
   intentos.pop();
@@ -114,6 +116,14 @@ function Confirmar(){
     }
   }
 
+  swal({
+    title: `${intentos.join("")}`,
+    text: `${mb} "Muy Buenas" y ${b} "Buenas"`,
+    buttons: false,
+    /* className: "mbb", */
+    timer: 1500,
+  });
+
   let fill = document.getElementById (chances[0]);
   const textNumber = document.createTextNode(`${intentos.join("")}`);
   let fill2 = document.createElement("div"); 
@@ -150,6 +160,8 @@ function Confirmar(){
   Borrar();
   Borrar();
   Borrar();
+
+  
   
   if (chances.length==0){
     Perdedor();
@@ -197,6 +209,8 @@ function Validar(){
 
   swal({
       title: "Estás seguro?",
+      cancel: "Cancelar",
+      confirm: "Nuevo Juego",
       icon: "warning",
       buttons: true,
       
@@ -213,6 +227,7 @@ function Ganador(){
   swal({
       title: "FELICITACIONES",
       text: `Adivinaste en ${11-chances.length} intentos `,
+
       icon: "success",
       button: "Nuevo Juego",
   })
@@ -222,8 +237,26 @@ function Perdedor(){
 
   swal({
       title: "NO HAY MÁS INTENTOS",
-      text: "Lo lamento, perdiste",
+      text: `Lo lamento, el número era ${guessNumber}`,
       icon: "error",
       button: "Nuevo Juego",
   })
 }
+
+async function Ranking (a){
+  await fetch(a)
+  .then(response => response.json())
+  .then(j =>{
+    swal({
+      title: "RANKING",
+      text: `${j[0].iniciales} - ${j[0].mejorJugada}
+      ${j[1].iniciales} - ${j[1].mejorJugada}
+      ${j[2].iniciales} - ${j[2].mejorJugada}
+      ${j[3].iniciales} - ${j[3].mejorJugada}
+      ${j[4].iniciales} - ${j[4].mejorJugada}
+      `,
+      button: "Cerrar",
+  })
+  })
+}
+  

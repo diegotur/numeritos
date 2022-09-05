@@ -150,6 +150,7 @@
     box-shadow: 2px 2px 10px black;
     font-size: 6vw;
     display: grid;
+    z-index: 1000;
     font-family: 'Press Start 2P', cursive;
     justify-items: center;
     align-items: center;
@@ -205,6 +206,11 @@
     font-family: 'Quantico', sans-serif;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.21);
     margin-bottom: 28px;
+}
+.mbb-title{
+    font-size: 36px;
+    color: white;
+    background-color: black;
 }
 
 @media only screen and (min-width: 768px) {
@@ -277,7 +283,7 @@
     }
     .botonesFooter{
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         font-size: 3vw;
         font-family: 'Quantico', sans-serif;
         color: rgba(254, 253, 253, 0.616);
