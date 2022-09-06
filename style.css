@@ -215,6 +215,10 @@
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.21);
     margin-bottom: 28px;
 }
+.swal2-placeHolder{
+    background-color: red;
+}
+
 .mbb-title{
     font-size: 36px;
     color: white;

@@ -257,17 +257,13 @@ function Ganador(){
   swal({
       text: `Adivinaste en ${11-chances.length} intentos `,
       button: "Nuevo Juego",
+      className:"swalGanador",
       content: {
         element: "input",
         attributes: {
           placeholder: "Ingresá tus iniciales",
-          color: "red",
           type: "text",
         },
-        inputAttributes:{
-          color: "red",
-          background: "black",
-        }
       },
   })
 }
