@@ -20,16 +20,22 @@ let arrGuessNumber = [];
 GenerarNumero();
 let boton = document.getElementsByClassName ("botonClick");
 let verIntento = document.getElementById ("verIntento");
+let pad = document.getElementById ("padBtn");
+let result = document.getElementById ("resultados");
 let borrar = document.getElementById ("btnBorrar");
 let confirmar = document.getElementById("btnConfirm");
 let x = document.getElementsByClassName ("styleDiv");
 let ranking = document.getElementById("btnFooter4");
 let mbb = document.getElementsByClassName("styleDivMbb");
-let mbbBox = document.getElementById("box");
+let mbbBox = document.getElementsByClassName("aparecerBox");
+let reglas = document.getElementById("btnFooter3");
+let staticbackdrop = document.getElementById("staticBackdrop");
 let intentos = [];
 let arrBtn = [];
 let chances = [];
 let chance = 0;
+let mbbFill;
+let mbbFix;
 
 for (i=0;i<10;i++){
   arrBtn.push ("btn"+i); 
@@ -63,6 +69,7 @@ confirmar.addEventListener("click", Confirmar);
 confirmar.addEventListener("click", ()=> {Rest(confirmar, 1)});
 confirmar.addEventListener("click", ()=> {Rest2(confirmar)});
 ranking.addEventListener("click", ()=> {Ranking("ranking.json")});
+reglas.addEventListener("click", ()=> {Reglas()});
 
 function Borrar(){
   intentos.pop();
@@ -117,28 +124,28 @@ function Confirmar(){
       b++
     }
   }
-  let mbbFill = ()=>{
-      let textMbbFill1 = document.createElement("div");
-      let textMbbFill2 = document.createElement("div");
-      textMbbFill1 =`${mb}`,
-      textMbbFill2 = `${b}`,
-      mbb[0].innerText ="";
-      mbb[1].innerText ="";
-    
-      mbb[0].append (textMbbFill1);
-      mbb[1].append (textMbbFill2);
+  mbbFill = ()=>{
+    let textMbbFill1 = document.createElement("div");
+    let textMbbFill2 = document.createElement("div");
+    textMbbFill1 =`${mb}`,
+    textMbbFill2 = `${b}`,
+    mbb[0].innerText ="";
+    mbb[1].innerText ="";
+  
+    mbb[0].append (textMbbFill1);
+    mbb[1].append (textMbbFill2);
 
-      mbbBox.style.animationName = "animate";
-      mbbBox.style.animationDuration = "0.15s";
-      mbbBox.style.transform = "scale(1,1)";
-      }
+    mbbBox[0].style.animationName = "animate";
+    mbbBox[0].style.animationDuration = "0.2s";
+    mbbBox[0].style.transform = "scale(1,1)";
+    }
   mbbFill();
   
-  let mbbFix = ()=>{
+  mbbFix = ()=>{
     setTimeout (function(){
-      mbbBox.style.animationName = "animate2";
-      mbbBox.style.animationDuration = "0.15s";
-      mbbBox.style.transform = "scale(0,0)";
+      mbbBox[0].style.animationName = "animate2";
+      mbbBox[0].style.animationDuration = "0.2s";
+      mbbBox[0].style.transform = "scale(0,0)";
 
       }, 3350);
   }
@@ -223,21 +230,23 @@ function Restart(){
   Borrar();
   Borrar();
   Borrar();
+
 }
-  
+function Reglas(){
+  staticbackdrop.style.visibility="visible";
+}  
+
 function Validar(){
 
   swal({
       title: "Estás seguro?",
       cancel: "Cancelar",
       confirm: "Nuevo Juego",
-      icon: "warning",
       buttons: true,
       
   }).then((confirm) => {
       if (confirm) {
           Restart();
-          mbbBox.style.visibility= "hidden";
       } 
   });
 }
