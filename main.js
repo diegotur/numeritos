@@ -24,6 +24,8 @@ let borrar = document.getElementById ("btnBorrar");
 let confirmar = document.getElementById("btnConfirm");
 let x = document.getElementsByClassName ("styleDiv");
 let ranking = document.getElementById("btnFooter4");
+let mbb = document.getElementsByClassName("styleDivMbb");
+let mbbBox = document.getElementById("box");
 let intentos = [];
 let arrBtn = [];
 let chances = [];
@@ -115,14 +117,35 @@ function Confirmar(){
       b++
     }
   }
+  let mbbFill = ()=>{
+      let textMbbFill1 = document.createElement("div");
+      let textMbbFill2 = document.createElement("div");
+      textMbbFill1 =`${mb}`,
+      textMbbFill2 = `${b}`,
+      mbb[0].innerText ="";
+      mbb[1].innerText ="";
+    
+      mbb[0].append (textMbbFill1);
+      mbb[1].append (textMbbFill2);
+    
+      mbbBox.style.width = "100%";
+      mbbBox.style.transition= "all 0.1s";
+      mbbBox.style.visibility= "visible";
 
-  swal({
-    title: `${intentos.join("")}`,
-    text: `${mb} "Muy Buenas" y ${b} "Buenas"`,
-    buttons: false,
-    /* className: "mbb", */
-    timer: 1500,
-  });
+      
+      }
+  mbbFill();
+  
+  let mbbFix = ()=>{
+    setTimeout (function(){
+      mbbBox.style.transform = "scale (2,2)";
+      mbbBox.style.transition= "all 1s";
+
+      mbbBox.style.visibility= "hidden";
+
+      }, 3350);
+  }
+  mbbFix();
 
   let fill = document.getElementById (chances[0]);
   const textNumber = document.createTextNode(`${intentos.join("")}`);
@@ -225,11 +248,20 @@ function Validar(){
 function Ganador(){
 
   swal({
-      title: "FELICITACIONES",
       text: `Adivinaste en ${11-chances.length} intentos `,
-
-      icon: "success",
       button: "Nuevo Juego",
+      content: {
+        element: "input",
+        attributes: {
+          placeholder: "Ingresá tus iniciales",
+          color: "red",
+          type: "text",
+        },
+        inputAttributes:{
+          color: "red",
+          background: "black",
+        }
+      },
   })
 }
 

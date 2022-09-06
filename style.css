@@ -168,12 +168,15 @@
 .swal-modal {
     border-radius: 50px;
 }
+.swal-contentInput{
+    text-transform: uppercase;
+}
 .swal-footer {
-    background-color: rgb(20, 26, 29);
+    background-color: rgb(255, 255, 255);
     margin-top: 32px;
     border-top: 1px solid #E9EEF1;
     overflow: hidden;
-    color: white;
+    color: black;
     display: flex;
     flex-direction: row;
     justify-content:space-around;
@@ -190,15 +193,20 @@
     text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
 }
 .swal-text {
-    background-color: #FEFAE3;
-    padding: 17px;
-    border: 1px solid #F0E1A1;
+    border: none;
     display: block;
     margin: 22px;
-    font-size: 28px;
+    font-size: 24px;
     font-family: 'Quantico', sans-serif;
     text-align: center;
     color: #61534e;
+}
+.swal-placeHolder{
+    background-color: red;
+    text-transform: uppercase;
+}
+.swal-overlay {
+    background-color: rgba(34, 43, 41, 0.748);
 }
 .swal-title {
     margin: 0px;
@@ -211,6 +219,28 @@
     font-size: 36px;
     color: white;
     background-color: black;
+}
+#box{
+    position: absolute;
+    height: 100%;
+    width: 0;
+    visibility: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    font-family: 'Quantico', sans-serif;
+    font-size: 36px;
+    background-color: cornsilk;
+}
+.styleDivMbb{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    
 }
 
 @media only screen and (min-width: 768px) {
