@@ -127,21 +127,18 @@ function Confirmar(){
     
       mbb[0].append (textMbbFill1);
       mbb[1].append (textMbbFill2);
-    
-      mbbBox.style.width = "100%";
-      mbbBox.style.transition= "all 0.1s";
-      mbbBox.style.visibility= "visible";
 
-      
+      mbbBox.style.animationName = "animate";
+      mbbBox.style.animationDuration = "0.15s";
+      mbbBox.style.transform = "scale(1,1)";
       }
   mbbFill();
   
   let mbbFix = ()=>{
     setTimeout (function(){
-      mbbBox.style.transform = "scale (2,2)";
-      mbbBox.style.transition= "all 1s";
-
-      mbbBox.style.visibility= "hidden";
+      mbbBox.style.animationName = "animate2";
+      mbbBox.style.animationDuration = "0.15s";
+      mbbBox.style.transform = "scale(0,0)";
 
       }, 3350);
   }
@@ -240,6 +237,7 @@ function Validar(){
   }).then((confirm) => {
       if (confirm) {
           Restart();
+          mbbBox.style.visibility= "hidden";
       } 
   });
 }
