@@ -11,9 +11,6 @@ async function ValidarRank(a) {
 }
 ValidarRank(rank);
 
-
-
-
 let arrGuessNumber = [];
 
 function GenerarNumero() {
@@ -34,6 +31,7 @@ function GenerarNumero() {
 }
 
 GenerarNumero();
+
 let boton = document.getElementsByClassName("botonClick");
 let verIntento = document.getElementById("verIntento");
 let pad = document.getElementById("padBtn");
@@ -158,9 +156,6 @@ function Confirmar() {
 
         staticbackdrop2.style.visibility = "visible";
 
-
-        console.log(inputSubmit.autofocus);
-
         let text = document.createElement("div");
         text = `Adivinaste en ${11-chances.length} intentos`;
         aciertos[0].innerText = "";
@@ -243,8 +238,6 @@ function Confirmar() {
             Borrar();
 
             chanceRank = chances.length;
-
-            console.log(chanceRank);
 
             const rank3 = JSON.parse(localStorage.getItem("ranking")) ?? [];
 
