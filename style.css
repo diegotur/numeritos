@@ -313,6 +313,7 @@
     visibility: hidden;
     background-color: #01010117;
     border: none;
+    transform: scale(1,1);
 }
 
 #staticBackdrop2 {
@@ -322,6 +323,8 @@
 }
 
 .modal-content {
+    transform: scale(0.8, 0.8);
+    margin-top: -5vh;
 }
 
 .modal-body {
@@ -390,15 +393,15 @@
 }
 
 .textP {
-    font-size: 10px;
+    font-size: 8px;
     font-family: 'Quantico', sans-serif;
+
 }
 
 .textPDiv {
     text-align: center;
-    font-size: 10px;
+    font-size: 20px;
     font-weight: 700;
-
     font-family: 'Quantico', sans-serif;
 }
 
@@ -417,16 +420,8 @@
     padding: 1vh 3vh 1vh 3vh;
 
 }
-.modalBodyReglas{
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-}
-.modalReglas{
-    width: 100%;
-}
-
 .imgMB, .imgB{
-    transform: scale(0.3, 0.3);
+    width: 100%;
 }
 
 @media only screen and (min-width: 768px) {
@@ -577,17 +572,43 @@
     }
 
     .modContent {
-        transform: scale(1.2, 1.2);
         transform: translate(-10vw);
     }
 
     .modalReglas {
         width: 160%;
+        display: grid;
+        justify-items: center;
+        font-size: 22px;
     }
-
+    #staticBackdrop {
+        background-color: transparent;
+        border: none;
+        transform: scale(0.9,0.9);
+        height: 110%;
+        
+    }
     #staticBackdropLabel2 {
         font-size: 50px;
         font-weight: 700;
+    }
+    .textPDiv {
+        text-align: center;
+        font-size: 26px;
+        font-weight: 700;
+        font-family: 'Quantico', sans-serif;
+    }
+    .imgB{
+        width: 66%;
+        transform: scaleY(0.8);
+    }
+    
+    .imgMB{
+        width: 65%;
+        transform: scaleY(0.8);
+    }
+    .luces{
+        font-size: 18px;
     }
 }
 
