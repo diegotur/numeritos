@@ -155,7 +155,7 @@
     justify-items: center;
     align-items: center;
 }
-.fa-solid{
+.fa-vault{
     font-size: 10vw;
     padding-top: 3vw;
     padding-bottom: 3vw;
@@ -287,6 +287,9 @@
     background-color: white;
     font-family: 'Quantico', sans-serif;
 }
+.modBody{
+    font-size: 14px;
+}
 .modal-header{
     display: grid;
     grid-template-columns: 1fr;
@@ -328,6 +331,10 @@
 }
 #staticBackdropLabel{
     font-size: 60px;
+    font-weight: 700;
+}
+#staticBackdropLabel2{
+    font-size: 30px;
     font-weight: 700;
 }
 
@@ -523,7 +530,7 @@
         margin-top: 1%;
         margin-left: 10%;
     }
-    .fa-solid{
+    .fa-vault{
         font-size: 5vw;
         padding-top: 2vw;
         padding-bottom: 1vw;
@@ -569,12 +576,16 @@
         background-color: white;
         font-family: 'Quantico', sans-serif;
     }
-    .modal-content{
+    .modContent{
         transform: scale(1.2,1.2);
         transform: translate(-10vw);
     }
     .modalReglas{
         width: 160%;
+    }
+    #staticBackdropLabel2{
+        font-size: 50px;
+        font-weight: 700;
     }
 }
 @media only screen and (min-width: 1024px) {

@@ -50,6 +50,7 @@ let reglas = document.getElementById("btnFooter3");
 let staticbackdrop = document.getElementById("staticBackdrop");
 let staticbackdrop2 = document.getElementById("staticBackdrop2");
 let botonSubmit = document.getElementById("botonSubmit");
+let inputSubmit = document.getElementById("submit");
 let aciertosGanador = document.getElementsByClassName("modal-body");
 let intentos = [];
 let arrBtn = [];
@@ -134,8 +135,13 @@ function Confirmar(){
   if (arrGuessNumber[0] == intentos[0] && arrGuessNumber[1] == intentos[1] && arrGuessNumber[2] == intentos[2] && arrGuessNumber[3] == intentos[3]){
     const myModal = new bootstrap.Modal(document.getElementById('staticBackdrop2'));
     myModal.show();
+    inputSubmit.focus();
 
     staticbackdrop2.style.visibility="visible";
+    
+
+    console.log(inputSubmit.autofocus);
+
     let text = document.createElement("div");
     text = `Adivinaste en ${11-chances.length} intentos`;
     aciertos[0].innerText ="";
@@ -166,7 +172,7 @@ function Confirmar(){
     mbb[1].append (textMbbFill2);
 
     mbbBox[0].style.animationName = "animate";
-    mbbBox[0].style.animationDuration = "0.2s";
+    mbbBox[0].style.animationDuration = "0.1s";
     mbbBox[0].style.transform = "scale(1,1)";
     }
   mbbFill();
