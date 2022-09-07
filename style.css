@@ -283,7 +283,7 @@
     transform: scale(0.8,0.8);
 }
 .modal-body{
-    font-size: 14px;
+    font-size: 18px;
     background-color: white;
     font-family: 'Quantico', sans-serif;
 }
@@ -327,8 +327,10 @@
     
 }
 #staticBackdropLabel{
-    font-size: 40px;
+    font-size: 60px;
+    font-weight: 700;
 }
+
 .textP{
     text-align:justify;
     font-size: 10px;
@@ -337,6 +339,8 @@
 .textPDiv{
     text-align: center;
     font-size: 20px;
+    font-weight: 700;
+
     font-family: 'Quantico', sans-serif;
 }
 .modal-footer{
@@ -560,8 +564,17 @@
         align-items: center;
         
     }
+    .modal-body{
+        font-size: 18px;
+        background-color: white;
+        font-family: 'Quantico', sans-serif;
+    }
     .modal-content{
         transform: scale(1.2,1.2);
+        transform: translate(-10vw);
+    }
+    .modalReglas{
+        width: 160%;
     }
 }
 @media only screen and (min-width: 1024px) {
