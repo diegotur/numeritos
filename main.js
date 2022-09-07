@@ -1,3 +1,16 @@
+const rank = JSON.parse(localStorage.getItem("ranking")) ?? [];
+
+async function ValidarRank (){
+  if ( rank.length==0){
+  await fetch("ranking.json")
+  .then(response => response.json())
+  .then(j =>{
+    localStorage.setItem ("ranking", JSON.stringify (j));
+  })
+}
+}
+ValidarRank();
+
 let arrGuessNumber = [];
 
   function GenerarNumero(){
@@ -28,8 +41,12 @@ let x = document.getElementsByClassName ("styleDiv");
 let ranking = document.getElementById("btnFooter4");
 let mbb = document.getElementsByClassName("styleDivMbb");
 let mbbBox = document.getElementsByClassName("aparecerBox");
+let aciertos = document.getElementsByClassName("aciertos");
 let reglas = document.getElementById("btnFooter3");
 let staticbackdrop = document.getElementById("staticBackdrop");
+let staticbackdrop2 = document.getElementById("staticBackdrop2");
+let botonSubmit = document.getElementById("botonSubmit");
+let aciertosGanador = document.getElementsByClassName("modal-body");
 let intentos = [];
 let arrBtn = [];
 let chances = [];
@@ -70,6 +87,7 @@ confirmar.addEventListener("click", ()=> {Rest(confirmar, 1)});
 confirmar.addEventListener("click", ()=> {Rest2(confirmar)});
 ranking.addEventListener("click", ()=> {Ranking("ranking.json")});
 reglas.addEventListener("click", ()=> {Reglas()});
+botonSubmit.addEventListener("click", ()=> {AgregarRanking()});
 
 function Borrar(){
   intentos.pop();
@@ -108,10 +126,17 @@ function Rest2(a){
 
 
 function Confirmar(){
-  console.log(intentos[0],intentos[1],intentos[2],intentos[3]);
   if (arrGuessNumber[0] == intentos[0] && arrGuessNumber[1] == intentos[1] && arrGuessNumber[2] == intentos[2] && arrGuessNumber[3] == intentos[3]){
-    Ganador();
+    const myModal = new bootstrap.Modal(document.getElementById('staticBackdrop2'));
+    myModal.show();
+
+    staticbackdrop2.style.visibility="visible";
+    let text = document.createElement("div");
+    text = `Adivinaste en ${11-chances.length} intentos`;
+    aciertos[0].innerText ="";
+    aciertos[0].append (text);
     Restart();
+
   } else{
   if (intentos.length== 4){
     b = 0;
@@ -189,14 +214,13 @@ function Confirmar(){
   Borrar();
 
   
-  
   if (chances.length==0){
     Perdedor();
     Restart();
   } 
   } 
 } 
-}
+
 let restartGame = document.getElementById("btnFooter1");
 
 restartGame.addEventListener("click", Validar);
@@ -230,7 +254,7 @@ function Restart(){
   Borrar();
   Borrar();
   Borrar();
-
+}
 }
 function Reglas(){
   staticbackdrop.style.visibility="visible";
@@ -251,23 +275,6 @@ function Validar(){
   });
 }
 
-
-function Ganador(){
-
-  swal({
-      text: `Adivinaste en ${11-chances.length} intentos `,
-      button: "Nuevo Juego",
-      className:"swalGanador",
-      content: {
-        element: "input",
-        attributes: {
-          placeholder: "Ingresá tus iniciales",
-          type: "text",
-        },
-      },
-  })
-}
-
 function Perdedor(){
 
   swal({
@@ -278,10 +285,8 @@ function Perdedor(){
   })
 }
 
-async function Ranking (a){
-  await fetch(a)
-  .then(response => response.json())
-  .then(j =>{
+function Ranking (a){
+  let j = JSON.parse(localStorage.getItem (a));
     swal({
       title: "RANKING",
       text: `${j[0].iniciales} - ${j[0].mejorJugada}
@@ -292,6 +297,25 @@ async function Ranking (a){
       `,
       button: "Cerrar",
   })
-  })
+}
+
+function AgregarRanking(){
+  let inputIniciales = document.getElementById("submit").value;
+    if (inputIniciales !=""&& inputIniciales.length<3==false){
+      let j = JSON.parse(localStorage.getItem ("ranking"));
+
+      j[5]= (iniciales= inputIniciales, mejorJugada=`intento Nº ${11-chances.length}`,number= 11-chances.length);
+      console.log(j[5].iniciales);
+        /* swal({
+        title: "RANKING",
+        text: `${j[0].iniciales} - ${j[0].mejorJugada}
+        ${j[1].iniciales} - ${j[1].mejorJugada}
+        ${j[2].iniciales} - ${j[2].mejorJugada}
+        ${j[3].iniciales} - ${j[3].mejorJugada}
+        ${j[4].iniciales} - ${j[4].mejorJugada}
+        `,
+        button: "Cerrar",
+    }) */
+  }
 }
   
