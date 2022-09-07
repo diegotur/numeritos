@@ -1,14 +1,15 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-.body{
+
+.body {
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
-    grid-template-areas: 
-    "cabecera cabecera cabecera"
-    "aside1 main aside2"
-    "pie pie pie";
+    grid-template-areas:
+        "cabecera cabecera cabecera"
+        "aside1 main aside2"
+        "pie pie pie";
     background-color: rgb(255, 244, 196);
     height: 100vh;
     width: 100vw;
@@ -16,9 +17,10 @@
     background: rgba(39, 11, 11, 0.148);
     backdrop-filter: blur(1.5px);
     -webkit-backdrop-filter: blur(2.5px);
-    
+
 }
-.padBtn{
+
+.padBtn {
     grid-area: pad;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -27,7 +29,8 @@
     width: 100%;
     height: 100%;
 }
-.botonClick{
+
+.botonClick {
     font-size: 6vw;
     font-family: 'Quantico', sans-serif;
     color: rgba(254, 253, 253, 0.616);
@@ -36,21 +39,23 @@
     box-shadow: 2px 2px 10px black;
     background-color: #4a3838;
 }
-.main{
+
+.main {
     grid-area: main;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1.5fr 2.5fr 2.5fr;
-    grid-template-areas: 
-    "intento"
-    "pad"
-    "resultado";
+    grid-template-areas:
+        "intento"
+        "pad"
+        "resultado";
     justify-items: center;
     background-color: rgba(201, 123, 5, 0.65);
     box-shadow: 2px 2px 10px black;
 }
-.caja{
-    height:100%;
+
+.caja {
+    height: 100%;
     width: 100%;
     z-index: 100;
     position: absolute;
@@ -58,7 +63,8 @@
     backdrop-filter: blur(3.5px);
     -webkit-backdrop-filter: blur(3.5px);
 }
-.cajaHeader{
+
+.cajaHeader {
     height: 100%;
     width: 100%;
     z-index: 100;
@@ -69,10 +75,12 @@
     justify-items: center;
     align-items: center;
 }
-.botonesFooter{
+
+.botonesFooter {
     display: grid;
 }
-#verIntento{
+
+#verIntento {
     grid-area: intento;
     display: grid;
     position: relative;
@@ -90,7 +98,16 @@
 }
 
 
-#chance1, #chance2, #chance3, #chance4, #chance5, #chance6, #chance7, #chance8, #chance9, #chance0{
+#chance1,
+#chance2,
+#chance3,
+#chance4,
+#chance5,
+#chance6,
+#chance7,
+#chance8,
+#chance9,
+#chance0 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     justify-items: center;
@@ -103,49 +120,56 @@
     box-shadow: 2px 2px 10px black;
     border: solid orange 0.1px;
     padding: 0;
-    background-color: rgb(238, 199, 92);   
+    background-color: rgb(238, 199, 92);
     font-family: 'Quantico', sans-serif;
-} 
-.resultados{
+}
+
+.resultados {
     grid-area: resultado;
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
     height: 100%;
-    justify-items:center;
+    justify-items: center;
     align-items: center;
 }
-.caja1, .caja2{
+
+.caja1,
+.caja2 {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     width: 100%;
     height: 100%;
-    justify-items:center;
+    justify-items: center;
     align-items: center;
     box-shadow: 2px 2px 10px black;
 }
 
-.chanceStyleDiv{
+.chanceStyleDiv {
     border-radius: 100%;
     width: 10px;
     height: 10px;
     background-color: red;
 }
-.styleDiv{
+
+.styleDiv {
     margin: 0;
     padding: 0;
     transform: scale(1, 1.6);
-}   
-.aside1{
+}
+
+.aside1 {
     grid-area: aside1;
     box-shadow: 2px 2px 10px black;
 }
-.aside2{
+
+.aside2 {
     grid-area: aside2;
     box-shadow: 2px 2px 10px black;
 }
-.header{
+
+.header {
     grid-area: cabecera;
     box-shadow: 2px 2px 10px black;
     font-size: 6vw;
@@ -155,23 +179,28 @@
     justify-items: center;
     align-items: center;
 }
-.fa-vault{
+
+.fa-vault {
     font-size: 10vw;
     padding-top: 3vw;
     padding-bottom: 3vw;
 }
-.footer{
+
+.footer {
     grid-area: pie;
     z-index: 10;
     box-shadow: 2px 2px 10px black;
 }
+
 .swal-modal {
     border-radius: 50px;
 }
-.swalPlaceHolder{
+
+.swalPlaceHolder {
     color: red;
     background-color: red;
 }
+
 .swal-footer {
     background-color: rgb(255, 255, 255);
     margin-top: 32px;
@@ -180,9 +209,10 @@
     color: black;
     display: flex;
     flex-direction: row;
-    justify-content:space-around;
+    justify-content: space-around;
     align-items: center;
 }
+
 .swal-button {
     padding: 7px 19px;
     border-radius: 20px;
@@ -192,6 +222,7 @@
     font-family: 'Quantico', sans-serif;
     text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
 }
+
 .swal-text {
     border: none;
     display: block;
@@ -201,9 +232,11 @@
     text-align: center;
     color: #61534e;
 }
+
 .swal-overlay {
     background-color: rgba(34, 43, 41, 0.748);
 }
+
 .swal-title {
     margin: 0px;
     font-size: 36px;
@@ -213,16 +246,17 @@
 }
 
 
-.mbb-title{
+.mbb-title {
     font-size: 36px;
     color: white;
     background-color: black;
 }
-.aparecerBox{
+
+.aparecerBox {
     position: absolute;
     height: 100%;
     width: 100%;
-    transform: scale(0,0);
+    transform: scale(0, 0);
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -232,33 +266,50 @@
     font-size: 16px;
     background-color: cornsilk;
 }
-#mb1, #b1{
+
+#mb1,
+#b1 {
     font-size: 30px;
 }
-#mb2, #b2{
+
+#mb2,
+#b2 {
     font-size: 18px;
     margin-top: 0;
     font-weight: 400;
 }
+
 @keyframes animate {
-    0%   {transform: scale(0,0);}
-    100% {transform: scale(1,1);}
+    0% {
+        transform: scale(0, 0);
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
 }
+
 @keyframes animate2 {
-    0%   {transform: scale(1,1);}
-    100% {transform: scale(0,0);}
+    0% {
+        transform: scale(1, 1);
+    }
+
+    100% {
+        transform: scale(0, 0);
+    }
 }
 
 
-.styleDivMbb{
+.styleDivMbb {
     height: 100%;
     width: 100%;
     display: grid;
     justify-items: center;
     align-items: center;
-    
+
 }
-.styleReglas{
+
+.styleReglas {
     position: relative;
     margin-top: -55vh;
     height: 100%;
@@ -266,31 +317,38 @@
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
-.styleReglas1{
+
+.styleReglas1 {
     font-size: 36px;
 }
-#staticBackdrop{
+
+#staticBackdrop {
     visibility: hidden;
     background-color: #01010117;
     border: none;
 }
-#staticBackdrop2{
+
+#staticBackdrop2 {
     visibility: hidden;
     background-color: #01010117;
     border: none;
 }
-.modal-content{
-    transform: scale(0.8,0.8);
+
+.modal-content {
+    transform: scale(0.8, 0.8);
 }
-.modal-body{
+
+.modal-body {
     font-size: 18px;
     background-color: white;
     font-family: 'Quantico', sans-serif;
 }
-.modBody{
+
+.modBody {
     font-size: 14px;
 }
-.modal-header{
+
+.modal-header {
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
@@ -298,7 +356,8 @@
     background-color: rgb(238, 199, 92);
     font-family: 'Quantico', sans-serif;
 }
-.aciertos{
+
+.aciertos {
     font-size: 26px;
     padding: 3vw;
     display: grid;
@@ -307,50 +366,58 @@
     text-align: center;
 
 }
-.input-group ::placeholder{
+
+.input-group ::placeholder {
     text-align: center;
     font-size: 26px;
 }
-.input-group input{
+
+.input-group input {
     text-align: center;
     font-size: 40px;
     text-transform: uppercase;
     border: none;
 }
-#botonSubmit{
+
+#botonSubmit {
     padding: 1vw;
     width: 100%;
 }
-.modal-title{
+
+.modal-title {
     font-size: 15px;
     display: grid;
     justify-items: center;
     align-items: center;
     text-align: center;
-    
+
 }
-#staticBackdropLabel{
+
+#staticBackdropLabel {
     font-size: 60px;
     font-weight: 700;
 }
-#staticBackdropLabel2{
+
+#staticBackdropLabel2 {
     font-size: 30px;
     font-weight: 700;
 }
 
-.textP{
-    text-align:justify;
+.textP {
+    text-align: justify;
     font-size: 10px;
     font-family: 'Quantico', sans-serif;
 }
-.textPDiv{
+
+.textPDiv {
     text-align: center;
     font-size: 20px;
     font-weight: 700;
 
     font-family: 'Quantico', sans-serif;
 }
-.modal-footer{
+
+.modal-footer {
     display: grid;
     justify-items: center;
     align-items: center;
@@ -359,81 +426,54 @@
     color: white;
     font-family: 'Quantico', sans-serif;
 }
-.btnModal{
+
+.btnModal {
     border-radius: 30px;
     padding: 1vh 3vh 1vh 3vh;
 
 }
 
 @media only screen and (min-width: 768px) {
-    .body{
+    .body {
         display: grid;
         grid-template-columns: 1fr 2fr;
         grid-template-rows: 1fr 1.5fr 0.2fr;
         row-gap: 2%;
-        grid-template-areas: 
-        "main cabecera"
-        "main main"
-        "pie pie";
+        grid-template-areas:
+            "main cabecera"
+            "main main"
+            "pie pie";
         background-color: rgb(255, 255, 255);
         height: 95vh;
         width: 99vw;
         margin: 1%;
         z-index: 100;
     }
-    .padBtn{
-        grid-area: pad;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
+
+    .padBtn {
         box-shadow: 0 0 0 black;
-        width: 100%;
-        height: 100%;
     }
-    .botonClick{
+
+    .botonClick {
         font-size: 3vw;
-        font-family: 'Quantico', sans-serif;
-        color: rgba(254, 253, 253, 0.616);
-        padding: 0;
-        margin: 0;
         box-shadow: 0 0 0 black;
-        background-color: #4a3838;
     }
-    .main{
+
+    .main {
         grid-area: main;
         grid-column: 1/3;
         grid-row: 1/3;
         display: grid;
         grid-template-columns: 0.5fr 1fr;
         grid-template-rows: 1fr 2.3fr;
-        grid-template-areas: 
-        "intento cabecera"
-        "pad resultado";
-        justify-items: center;
+        grid-template-areas:
+            "intento cabecera"
+            "pad resultado";
         background-color: rgba(255, 255, 255, 0.65);
         box-shadow: 0 0 0 black;
     }
-    .caja{
-        height:100%;
-        width: 100%;
-        z-index: 100;
-        position: absolute;
-        background: rgba(39, 11, 11, 0.088);
-        backdrop-filter: blur(3.5px);
-        -webkit-backdrop-filter: blur(3.5px);
-    }
-    .cajaHeader{
-        height: 100%;
-        width: 100%;
-        z-index: 100;
-        background: rgba(8, 0, 9, 0.288);
-        backdrop-filter: blur(3px);
-        -webkit-backdrop-filter: blur(3px);
-        display: grid;
-        justify-items: center;
-        align-items: center;
-    }
-    .botonesFooter{
+
+    .botonesFooter {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         font-size: 3vw;
@@ -444,76 +484,50 @@
         box-shadow: 0 0 0 black;
         background-color: none;
     }
-    .btnFooter{
+
+    .btnFooter {
         margin-bottom: 1%;
         font-size: 2.5vw;
         margin: 3%;
         background-color: #010101;
     }
-    #verIntento{
-        grid-area: intento;
-        display: grid;
-        position: relative;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    #verIntento {
         color: rgb(45, 42, 42);
         font-size: 6vw;
-        z-index: 1;
-        justify-items: center;
         box-shadow: 0 0 0 black;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        font-family: 'Quantico', sans-serif;
     }
-    
-    #chance1, #chance2, #chance3, #chance4, #chance5, #chance6, #chance7, #chance8, #chance9, #chance0{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        justify-items: center;
-        align-items: center;
-        position: relative;
+
+    #chance1,
+    #chance2,
+    #chance3,
+    #chance4,
+    #chance5,
+    #chance6,
+    #chance7,
+    #chance8,
+    #chance9,
+    #chance0 {
         font-size: 2.5vw;
-        height: 85%;
-        width: 96%;
-        margin: 0;
         box-shadow: 0 0 0 black;
         border: solid orange 0;
-        padding: 0;
-        background-color: rgb(238, 199, 92);   
-        font-family: 'Quantico', sans-serif;
-    } 
-    .resultados{
-        grid-area: resultado;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        width: 100%;
-        height: 100%;
-        z-index: 10;
-        justify-items:center;
-        align-items: center;
     }
-    .caja1, .caja2{
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-        width: 100%;
-        height: 100%;
-        justify-items:center;
-        align-items: center;
+
+    .resultados {
+        z-index: 10;
+    }
+
+    .caja1,
+    .caja2 {
         box-shadow: 0 0 0 black;
     }
-    .chanceStyleDiv{
-        border-radius: 100%;
+
+    .chanceStyleDiv {
         width: 25px;
         height: 25px;
-        background-color: red;
     }
-    .styleDiv{
-        margin: 0;
-        padding: 0;
-        transform: scale(1, 1.6);
-    }   
-    .header{
+
+    .header {
         grid-area: cabecera;
         grid-column: 2 / 3;
         grid-row: 1/2;
@@ -522,77 +536,74 @@
         display: grid;
         background-color: rgb(255, 244, 196);
         font-family: 'Press Start 2P', cursive;
-        justify-items: center;
-        z-index: 5;
-        align-items: center;
         height: 65%;
         width: 80%;
         margin-top: 1%;
         margin-left: 10%;
     }
-    .fa-vault{
+
+    .fa-vault {
         font-size: 5vw;
         padding-top: 2vw;
         padding-bottom: 1vw;
     }
-    .footer{
-        grid-area: pie;
-        z-index: 10;
+
+    .footer {
         box-shadow: 0 0 0 black;
     }
-    .aparecerBox{
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        transform: scale(0,0);
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        justify-items: center;
-        align-items: center;
+
+    .aparecerBox {
         font-family: 'Quantico', sans-serif;
         font-size: 36px;
         background-color: cornsilk;
     }
-    #mb1, #b1{
+
+    #mb1,
+    #b1 {
         font-size: 35px;
     }
-    #mb2, #b2{
+
+    #mb2,
+    #b2 {
         font-size: 25px;
         margin-top: -1.5vh;
         font-weight: 700;
     }
-    .styleDivMbb{
-        height: 100%;
-        width: 100%;
-        display: grid;
+
+    .styleDivMbb {
         font-size: 40px;
-        justify-items: center;
-        align-items: center;
-        
     }
-    .modal-body{
+
+    .modal-body {
         font-size: 18px;
         background-color: white;
         font-family: 'Quantico', sans-serif;
     }
-    .modContent{
-        transform: scale(1.2,1.2);
+
+    .modContent {
+        transform: scale(1.2, 1.2);
         transform: translate(-10vw);
     }
-    .modalReglas{
+
+    .modalReglas {
         width: 160%;
     }
-    #staticBackdropLabel2{
+
+    #staticBackdropLabel2 {
         font-size: 50px;
         font-weight: 700;
     }
 }
+
 @media only screen and (min-width: 1024px) {
-    #mb1, #b1{
+
+    #mb1,
+    #b1 {
         font-size: 50px;
     }
-    #mb2, #b2{
+
+    #mb2,
+    #b2 {
         font-size: 40px;
         margin-top: -1.5vh;
         font-weight: 700;
