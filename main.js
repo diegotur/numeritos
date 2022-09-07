@@ -1,7 +1,7 @@
 const rank = JSON.parse(localStorage.getItem("ranking")) ?? [];
 
-async function ValidarRank (){
-  if ( rank.length==0){
+async function ValidarRank (a){
+  if ( a.length==0){
   await fetch("ranking.json")
   .then(response => response.json())
   .then(j =>{
@@ -9,7 +9,11 @@ async function ValidarRank (){
   })
 }
 }
-ValidarRank();
+ValidarRank(rank);
+
+
+
+
 
 let arrGuessNumber = [];
 
@@ -51,6 +55,7 @@ let intentos = [];
 let arrBtn = [];
 let chances = [];
 let chance = 0;
+let chanceRank;
 let mbbFill;
 let mbbFix;
 
@@ -85,7 +90,7 @@ borrar.addEventListener("click", ()=> {Rest2(borrar)});
 confirmar.addEventListener("click", Confirmar);
 confirmar.addEventListener("click", ()=> {Rest(confirmar, 1)});
 confirmar.addEventListener("click", ()=> {Rest2(confirmar)});
-ranking.addEventListener("click", ()=> {Ranking("ranking.json")});
+ranking.addEventListener("click", ()=> {Ranking("ranking")});
 reglas.addEventListener("click", ()=> {Reglas()});
 botonSubmit.addEventListener("click", ()=> {AgregarRanking()});
 
@@ -186,7 +191,6 @@ function Confirmar(){
   
   for (const elem of fills){
     elem.classList.add("chanceStyleDiv");
-    console.log (fills[0]);
   }
   for (i=0; i<mb; i++){
     fills[i].style.backgroundColor = "green";
@@ -213,7 +217,15 @@ function Confirmar(){
   Borrar();
   Borrar();
 
+  chanceRank = chances.length;  
+
+  console.log(chanceRank);
   
+  const rank3 = JSON.parse(localStorage.getItem ("ranking")) ?? [];
+
+  ValidarRank(rank3);
+
+
   if (chances.length==0){
     Perdedor();
     Restart();
@@ -224,6 +236,21 @@ function Confirmar(){
 let restartGame = document.getElementById("btnFooter1");
 
 restartGame.addEventListener("click", Validar);
+
+function Validar(){
+
+  swal({
+      title: "Estás seguro?",
+      cancel: "Cancelar",
+      confirm: "Nuevo Juego",
+      buttons: true,
+      
+  }).then((confirm) => {
+      if (confirm) {
+          Restart();
+      } 
+  });
+}
 
 function Restart(){
 
@@ -260,21 +287,6 @@ function Reglas(){
   staticbackdrop.style.visibility="visible";
 }  
 
-function Validar(){
-
-  swal({
-      title: "Estás seguro?",
-      cancel: "Cancelar",
-      confirm: "Nuevo Juego",
-      buttons: true,
-      
-  }).then((confirm) => {
-      if (confirm) {
-          Restart();
-      } 
-  });
-}
-
 function Perdedor(){
 
   swal({
@@ -300,22 +312,50 @@ function Ranking (a){
 }
 
 function AgregarRanking(){
-  let inputIniciales = document.getElementById("submit").value;
-    if (inputIniciales !=""&& inputIniciales.length<3==false){
-      let j = JSON.parse(localStorage.getItem ("ranking"));
+  
+  const rank4 = JSON.parse(localStorage.getItem ("ranking"));
 
-      j[5]= (iniciales= inputIniciales, mejorJugada=`intento Nº ${11-chances.length}`,number= 11-chances.length);
-      console.log(j[5].iniciales);
-        /* swal({
+  let inputIniciales = document.getElementById("submit").value;
+      inputIniciales = inputIniciales.toUpperCase();
+
+    if (inputIniciales !=""&& inputIniciales.length<3==false){
+
+      rank4.push({
+        iniciales: inputIniciales,
+        mejorJugada:`intento Nº ${11-chanceRank}`,
+        number: 11-chanceRank
+      });
+
+      function compare(a, b) {
+
+        const num1 = a.number;
+        const num2 = b.number;
+      
+        let comp = 0;
+        if (num1 > num2) {
+          comp = 1;
+        } else if (num1 < num2) {
+          comp = -1;
+        }
+        return comp;
+      }
+      
+      rank4.sort(compare);
+
+      localStorage.setItem ("ranking", JSON.stringify (rank4));
+
+      
+      swal({
         title: "RANKING",
-        text: `${j[0].iniciales} - ${j[0].mejorJugada}
-        ${j[1].iniciales} - ${j[1].mejorJugada}
-        ${j[2].iniciales} - ${j[2].mejorJugada}
-        ${j[3].iniciales} - ${j[3].mejorJugada}
-        ${j[4].iniciales} - ${j[4].mejorJugada}
+        text: `${rank4[0].iniciales} - ${rank4[0].mejorJugada}
+        ${rank4[1].iniciales} - ${rank4[1].mejorJugada}
+        ${rank4[2].iniciales} - ${rank4[2].mejorJugada}
+        ${rank4[3].iniciales} - ${rank4[3].mejorJugada}
+        ${rank4[4].iniciales} - ${rank4[4].mejorJugada}
         `,
         button: "Cerrar",
-    }) */
+      }) 
+      chanceRank = 0;
   }
 }
   

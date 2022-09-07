@@ -424,7 +424,7 @@
     }
     .botonesFooter{
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         font-size: 3vw;
         font-family: 'Quantico', sans-serif;
         color: rgba(254, 253, 253, 0.616);
@@ -544,10 +544,10 @@
         background-color: cornsilk;
     }
     #mb1, #b1{
-        font-size: 50px;
+        font-size: 35px;
     }
     #mb2, #b2{
-        font-size: 40px;
+        font-size: 25px;
         margin-top: -1.5vh;
         font-weight: 700;
     }
@@ -562,5 +562,15 @@
     }
     .modal-content{
         transform: scale(1.2,1.2);
+    }
+}
+@media only screen and (min-width: 1024px) {
+    #mb1, #b1{
+        font-size: 50px;
+    }
+    #mb2, #b2{
+        font-size: 40px;
+        margin-top: -1.5vh;
+        font-weight: 700;
     }
 }
